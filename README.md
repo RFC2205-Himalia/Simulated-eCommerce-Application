@@ -39,9 +39,13 @@ git pull
 git checkout -b '0001-MyNewFeatureDesc'
 ```
 3. Build out feature & commit changes
+```sh
+git commit -am "your commit message"
+```
 4. Push local branch to github
 ```sh
-git push -u origin [0001-MyNewFeatureDesc]
+git push -u origin [0001-MyNewFeatureDesc] //on the first push
+git push //on every successive push
 ```
 5. Create pull request
   - On github.com
