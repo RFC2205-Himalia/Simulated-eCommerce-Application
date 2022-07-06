@@ -4,10 +4,10 @@ RFC2205 Front End Capstone Project team Himalia
 
 ## Table of Contents
 
-1. [Usage] (#Usage)
-2. [Requirements] (#requirements)
-3. [Setup] (#setup)
-4. [Git Workflow] (#workflow)
+1. [Usage](#Usage)
+2. [Requirements](#requirements)
+3. [Setup](#setup)
+4. [Git Workflow](#workflow)
 
 ## Usage
 
