@@ -4,10 +4,10 @@ RFC2205 Front End Capstone Project team Himalia
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Usage](#usage)
 2. [Requirements](#requirements)
 3. [Setup](#setup)
-4. [Git Workflow](#workflow)
+4. [Git-Workflow](#git-workflow)
 
 ## Usage
 
@@ -28,7 +28,7 @@ yarn install
 yarn dev
 ```
 
-## Git Workflow
+## Git-Workflow
 
 1. Pull most recent version of master
 ```sh
