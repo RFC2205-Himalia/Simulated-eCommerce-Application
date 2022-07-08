@@ -15,16 +15,17 @@ RFC2205 Front End Capstone Project team Himalia
 
 ## Requirements
 
--some
--requirements
+- yarn
+- node.js
+- React Dev Tools (recommended)
 
 ## Setup
 
 From the root directory of Repo
 
 ```sh
-npm install
-npm run client-dev
+yarn install
+yarn dev
 ```
 
 ## Git Workflow
