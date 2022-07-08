@@ -1,30 +1,29 @@
-// Bring React in to build a component. 
 import React from "react";
-// Bring reactDOM in to mount component to the dom.
 import reactDOM from "react-dom";
-import "./index.scss";
+import Overview from './components/Overview/Overview.jsx';
+import Questions from './components/Questions/Questions.jsx';
+import Reviews from './components/Review/ReviewWidget.jsx';
+import Similar from './components/Similar/Similar.jsx';
 
-// Here is out base App component. 
-// Notice we are NOT using jsx here. This is because we have not set up babel yet.
-const App = () => {
-    return <h1>Hello Nick</h1>
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
   }
-// Render our app to the dom mounted to the element with id of root inside our public/index.html file.
-reactDOM.render(<App />, document.getElementById("app"));
 
-
-
-/*
-
-import { createRoot } from "react-dom/client";
-const root = createRoot(document.getElementById("root"));
-
-// Huzzah for jsx!
-const App = () => {
-  return <h1>Hello World</h1>
+  render() {
+    return (
+      <div>
+        <Overview/>
+        <Questions/>
+        <Reviews/>
+        <Similar/>
+      </div>
+    )
+  }
 }
 
-root.render(<App />);
 
-
-*/
+reactDOM.render(<App />, document.getElementById("app"));
