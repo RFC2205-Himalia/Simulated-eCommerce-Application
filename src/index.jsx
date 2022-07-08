@@ -2,6 +2,7 @@
 import React from "react";
 // Bring reactDOM in to mount component to the dom.
 import reactDOM from "react-dom";
+import "./index.scss";
 
 // Here is out base App component. 
 // Notice we are NOT using jsx here. This is because we have not set up babel yet.
