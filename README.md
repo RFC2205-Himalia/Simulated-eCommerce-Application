@@ -34,30 +34,30 @@ npm run client-dev
 git checkout dev
 git pull
 ```
-2. Create Feature Branch (branchName = ticket# - featureDesc)
+1. Create Feature Branch (branchName = ticket# - featureDesc)
 ```sh
 git checkout -b '0001-MyNewFeatureDesc'
 ```
-3. Build out feature & commit changes
+1. Build out feature & commit changes
 ```sh
 git commit -am "your commit message"
 ```
-4. Push local branch to github
+1. Push local branch to github
 ```sh
 git push -u origin [0001-MyNewFeatureDesc] //on the first push
 git push //on every successive push
 ```
-8. Merge co-workers changes from Dev into working branch
+1. Merge co-workers changes from Dev into working branch
 ```sh
 //from working branch
 git merge dev
 ```
-5. Create pull request
+1. Create pull request
   - On github.com
       - pull requests => new pull request  
       ```sh
       base repo: RFC2205-Himalia/Front_End_Capstone base: dev <- head repo: RFC2205-Himalia/ compare: 0001-MyNewFeatureDesc
       ```
   - Send message in slack with link to PR request
-6. Wait for merge approval from teammate
-7. Merge branch into dev
+1. Wait for merge approval from teammate
+1. Merge branch into dev
