@@ -47,6 +47,11 @@ git commit -am "your commit message"
 git push -u origin [0001-MyNewFeatureDesc] //on the first push
 git push //on every successive push
 ```
+8. Merge co-workers changes from Dev into working branch
+```sh
+//from working branch
+git merge dev
+```
 5. Create pull request
   - On github.com
       - pull requests => new pull request  
