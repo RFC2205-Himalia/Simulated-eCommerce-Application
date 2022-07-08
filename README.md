@@ -31,7 +31,7 @@ npm run client-dev
 
 1. Pull most recent version of master
 ```sh
-git checkout master
+git checkout dev
 git pull
 ```
 2. Create Feature Branch (branchName = ticket# - featureDesc)
@@ -51,8 +51,8 @@ git push //on every successive push
   - On github.com
       - pull requests => new pull request  
       ```sh
-      base repo: RFC2205-Himalia/Front_End_Capstone base: master <- head repo: RFC2205-Himalia/ compare: 0001-MyNewFeatureDesc
+      base repo: RFC2205-Himalia/Front_End_Capstone base: dev <- head repo: RFC2205-Himalia/ compare: 0001-MyNewFeatureDesc
       ```
   - Send message in slack with link to PR request
 6. Wait for merge approval from teammate
-7. Merge branch into master
+7. Merge branch into dev
