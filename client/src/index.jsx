@@ -1,29 +1,19 @@
 import React from "react";
 import reactDOM from "react-dom";
-import Overview from './components/Overview/Overview.jsx';
-import Questions from './components/Questions/Questions.jsx';
-import Reviews from './components/Review/ReviewWidget.jsx';
-import Similar from './components/Similar/Similar.jsx';
-
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Overview/>
-        <Questions/>
-        <Reviews/>
-        <Similar/>
-      </div>
-    )
-  }
-}
+import App from "./App.jsx";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import addProductReducer from './Features/addProduct.js';
+import testReducer from './Features/test.js'
 
 
-reactDOM.render(<App />, document.getElementById("app"));
+const store = configureStore ({
+  reducer: {
+    addProduct: addProductReducer,
+    test: testReducer,
+  },
+});
+
+
+reactDOM.render(<Provider store = {store}><App /></Provider>,
+document.getElementById("app"));

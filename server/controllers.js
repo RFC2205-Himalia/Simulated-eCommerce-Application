@@ -7,7 +7,7 @@ const get = (req, res) => {
   Model.getProductData(urlTail)
   .then((success) => {
     console.log('test 2', success.data)
-    res.status(200).send(success)
+    res.status(200).send(success.data)
   })
   .catch((error) => {
     //console.log('error test', error)
