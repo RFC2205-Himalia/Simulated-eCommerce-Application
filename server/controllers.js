@@ -2,11 +2,11 @@ const Model = require("./model.js");
 
 const get = (req, res) => {
   console.log('url check 1', req.url)
-  const urlTail = req.url.slice(6)
+  const urlTail = req.url
   console.log('test 1', urlTail)
   Model.getProductData(urlTail)
   .then((success) => {
-    console.log('test 2', success)
+    console.log('test 2', success.data)
     res.status(200).send(success)
   })
   .catch((error) => {

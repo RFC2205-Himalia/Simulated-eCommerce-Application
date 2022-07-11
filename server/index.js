@@ -12,7 +12,7 @@ app.use(express.json());
 //app.use(express.static(path.join(__dirname, '../client/public')));
 
 //define routes
-app.get("/", controller.get)
+app.get("/*", controller.get)
 
 
 //define port
