@@ -19,7 +19,7 @@ function Price () {
 
   if (styleList) {
     styleList.map((style, index) => {
-      if(index === currentStyle) {
+      if(index === 2) {
         originalPrice = style.original_price
         salePrice = style.sale_price
         console.log('got prices', originalPrice, salePrice)
@@ -27,6 +27,7 @@ function Price () {
     })
   }
 
+//for refactoring consider using turnary (? :)
 if (!salePrice) {
   return (
   <div>
@@ -37,7 +38,7 @@ if (!salePrice) {
   return (
     <div>
       <p><s>{originalPrice}</s></p>
-      <p>{salePrice}</p>
+      <font color="red">{salePrice}</font>
     </div>
   )
 }
