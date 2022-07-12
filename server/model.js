@@ -10,8 +10,8 @@ const getProductData = (urlTail) => {
       //'Authorization': process.env.AUTH_TOKEN
     }
   };
-  console.log("options", options.url)
-  console.log('auth', process.env.AUTH_TOKEN)
+  //console.log("options", options.url)
+  //console.log('auth', process.env.AUTH_TOKEN)
 
   // axios.get('/user_login', {
   //   params: {

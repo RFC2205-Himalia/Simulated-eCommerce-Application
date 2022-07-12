@@ -5,7 +5,7 @@ import { RiStarSLine } from "react-icons/ri"
 function stars() {
 
   const totalStars = 5;
-  const active = 3.5; //REPLACE WITH VARIABLE FOR RATING NUMBER
+  const active = 3; //REPLACE WITH VARIABLE FOR RATING NUMBER
 
   const style = {
     display: "inline-flex",
@@ -18,7 +18,7 @@ function stars() {
       {[...new Array(totalStars)].map((arr, index) => {
         const activeStar = active;
         const emptyStar = activeStar === -1 || activeStar < index + 1;
-        const highestIndex = Math.floor(activeStar) === index + 1;
+        //const highestIndex = Math.floor(activeStar) === index + 1;
         // const showRating = highestIndex;
 
         return (

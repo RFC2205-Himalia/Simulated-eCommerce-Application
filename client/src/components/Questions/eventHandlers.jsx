@@ -1,5 +1,5 @@
-import { addRender } from "../../Features/questions.js";
-import { useDispatch, useSelector } from "react-redux";
+// import { addRender } from "../../Features/questions.js";
+// import { useDispatch, useSelector } from "react-redux";
 
 // Generic Click Handler
   const clickHandler = (e) => {
@@ -19,12 +19,12 @@ import { useDispatch, useSelector } from "react-redux";
 
   // Render initial list of 4,
   const addAnswersHandler = () => {
-    console.log('test');
+    console.log('Add An Answer Clicked');
 
   }
 
   const reportHandler = () => {
-    console.log('reported');
+    console.log('Reported Clicked');
   }
 
 export {clickHandler, convertDate, changeHandler, addAnswersHandler, reportHandler};
