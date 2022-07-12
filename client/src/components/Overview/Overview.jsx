@@ -1,22 +1,19 @@
 import React from 'react';
-import axios from 'axios';
+import { useSelector } from "react-redux";
+// import { useEffect } from "react";
 
-class Overview extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+function Overview () {
+  const productName = useSelector((state) => state.addProduct.products.name)
+  const productCategory = useSelector((state) => state.addProduct.products.category)
+  const productPrice = useSelector((state) => state.addProduct.products.default_price)
 
-    }
-  }
-
-  render () {
     return (
     <div>
-      <p>Overview Component</p>
+      <h1>Overview Component</h1>
+      <h3>{productName}</h3>
+      <h4>{productCategory} ${productPrice}</h4>
     </div>
     )
-
-  }
 }
 
 
