@@ -6,7 +6,6 @@ export const questionData = createSlice({
   reducers: {
     questionList: (state, action) => {
       state.questions = action.payload
-      console.log(state);
     }
   }
 })

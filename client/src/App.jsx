@@ -20,7 +20,7 @@ function App () {
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}`)
     .then((success) => {
-      console.log("success", success)
+      //console.log("success", success)
       dispatch(addProduct(success.data))
     })
     .catch((error) => {
