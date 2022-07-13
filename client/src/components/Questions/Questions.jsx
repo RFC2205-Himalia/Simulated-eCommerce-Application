@@ -4,7 +4,7 @@ import axios from "axios";
 import List from "./List.jsx";
 import Sort from "./Sort.jsx"
 import Stars from "./stars.jsx";
-import {changeHandler, clickHandler, addAnswersHandler} from './eventHandlers.jsx';
+import {changeHandler, queryHandler, addQuestionHandler, moreHandler} from './eventHandlers.jsx';
 import { GoSearch } from "react-icons/go"
 
 import { useDispatch } from "react-redux";
@@ -49,12 +49,12 @@ function Questions () {
       <Stars/>
       <form>
           <input style={formStyle} type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...' onChange={changeHandler}/>
-          <GoSearch id='query' onClick = {clickHandler}/>
+          <GoSearch id='query' onClick = {queryHandler}/>
       </form>
       <List/>
       <br></br>
-      <button title="More" onClick={addAnswersHandler} type='button'>MORE ANSWERED QUESTIONS</button>&nbsp;
-      <button title="Add" onClick={clickHandler} type='button'>ADD A QUESTION + </button>
+      <button title="More" onClick={moreHandler} type='button'>MORE ANSWERED QUESTIONS</button>&nbsp;
+      <button title="Add" onClick={addQuestionHandler} type='button'>ADD A QUESTION + </button>
     </div>
   )
 }

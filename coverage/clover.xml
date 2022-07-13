@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657662806356" clover="3.2.0">
-  <project timestamp="1657662806356" name="All files">
+<coverage generated="1657663928872" clover="3.2.0">
+  <project timestamp="1657663928872" name="All files">
     <metrics statements="20" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="4" coveredmethods="4" elements="32" coveredelements="28" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
     <file name="Sort.jsx" path="/Users/nicholaskempkes/repositories/FEC-2205/Front_End_Capstone/client/src/components/Questions/Sort.jsx">
       <metrics statements="20" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="4" coveredmethods="4"/>
