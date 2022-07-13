@@ -1,36 +1,42 @@
 const Model = require("./model.js");
 
 const get = (req, res) => {
-  //console.log('url check 1', req.url)
+  console.log('getting')
   const urlTail = req.url
-  //console.log('test 1', urlTail)
+  // console.log('test 1', urlTail)
   Model.getProductData(urlTail)
   .then((success) => {
-    //console.log('test 2', success.data)
+    // console.log('test 2', success.data)
     res.status(200).send(success.data)
   })
   .catch((error) => {
-    //console.log('error test', error)
-    res.status(500).send(error.message);
+    // console.log('error test);
+    res.status(500).send(error);
   })
 }
 
 const post = (req, res) => {
-  const urlTail = req.body.url
-  Model.postProductData(urlTail)
+  console.log("posting");
+  const urlTail = req.url
+  // console.log(req.body);
+  Model.postProductData(urlTail,req.body)
   .then((success) => {
-    res.status(201).send(success)
+    res.status(201).send(success.data)
   })
   .catch((error) => {
-    res.status(500).send(error.message);
+    console.log(error)
+    res.status(500).send(error);
   })
 }
 
 const put = (req, res) => {
-  const urlTail = req.body.url
+  console.log("putting");
+  const urlTail = req.url
+  // console.log(urlTail);
   Model.putProductData(urlTail)
   .then((success) => {
-    res.status(201).send(success)
+    console.log(success.status);
+    res.status(204).send(success.data)
   })
   .catch((error) => {
     res.status(500).send(error.message);

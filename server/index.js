@@ -13,6 +13,9 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 //define routes
 app.get("/*", controller.get)
+app.post("/*",controller.post)
+app.put("/*",controller.put)
+
 
 
 //define port
