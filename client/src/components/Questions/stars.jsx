@@ -5,7 +5,7 @@ import { RiStarSLine } from "react-icons/ri"
 function stars() {
 
   const totalStars = 5;
-  const active = 4; //REPLACE WITH VARIABLE FOR RATING NUMBER
+  const active = 3; //REPLACE WITH VARIABLE FOR RATING NUMBER
 
   const style = {
     display: "inline-flex",
@@ -23,7 +23,7 @@ function stars() {
 
         return (
           <div key={index} position="realtive">
-            <div style={{ width: `${25}%`, overflow: "hidden", position: "absolute" }}>
+            <div style={{ width: `${0}%`, overflow: "hidden", position: "absolute" }}>
               <RiStarSFill />
             </div>
             <div>

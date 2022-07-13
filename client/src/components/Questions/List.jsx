@@ -1,24 +1,30 @@
 import React from "react";
-import reactDOM from "react-dom";
 import Helpful from './helpfulComponent.jsx';
 import Answers from './renderAnswers.jsx';
 import { useSelector} from 'react-redux';
 
-function List() {
-
-  const list = useSelector(state => state.questions.questions);
+function List(props) {
+  const list = useSelector(state => state.questions.renderList);
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
 
+
+
+  const scrollable =
+  {
+    'overflow': 'scroll',
+    'maxHeight': '500px',
+  };
+
   return (
-    <div>
+    <div style={scrollable}>
       {answersSorted ? list.map((question) => {
         return <div key = {`${question.question_id}`}>
             <br></br>
           <span style={{'fontSize': '20px'}}><b>Q: {question.question_body}</b></span>
-          <Helpful data={question}/>
-          <Answers answersSorted={answersSorted} question={question}/>
+          <Helpful title={question.question_id} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} data={question}/>
+          <Answers answersSorted={answersSorted} question={question} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} answerHandler={props.answerHandler} answerCollapseHandler={props.answerCollapseHandler}/>
           </div>
-      }) : "No questions match criteria" }
+      }) : null }
     </div>
   )
 }
