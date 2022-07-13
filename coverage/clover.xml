@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657688453179" clover="3.2.0">
-  <project timestamp="1657688453179" name="All files">
-    <metrics statements="42" coveredstatements="3" conditionals="10" coveredconditionals="0" methods="23" coveredmethods="1" elements="75" coveredelements="4" complexity="0" loc="42" ncloc="42" packages="5" files="9" classes="9"/>
-    <package name="Features">
-      <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+<coverage generated="1657691112215" clover="3.2.0">
+  <project timestamp="1657691112215" name="All files">
+    <metrics statements="27" coveredstatements="18" conditionals="8" coveredconditionals="2" methods="13" coveredmethods="9" elements="48" coveredelements="29" complexity="0" loc="27" ncloc="27" packages="3" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="reducer.js" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/reducer.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Features">
+      <metrics statements="7" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="Styles.js" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/Features/Styles.js">
         <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
@@ -11,79 +18,45 @@
         <line num="11" count="0" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
-    </package>
-    <package name="components.Overview">
-      <metrics statements="11" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
-      <file name="Overview.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Overview.jsx">
-        <metrics statements="11" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+      <file name="addProduct.js" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/Features/addProduct.js">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.Overview.Add Cart">
-      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="AddCart.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Add Cart/AddCart.jsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="components.Overview.Product Details">
-      <metrics statements="19" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="0"/>
+    <package name="src.components.Overview.Product Details">
+      <metrics statements="19" coveredstatements="13" conditionals="8" coveredconditionals="2" methods="10" coveredmethods="9"/>
       <file name="Details.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Product Details/Details.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
       </file>
       <file name="Price.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Product Details/Price.jsx">
-        <metrics statements="13" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="13" coveredstatements="7" conditionals="8" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="2" type="stmt"/>
         <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="38" count="0" type="stmt"/>
       </file>
       <file name="ProductDetails.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Product Details/ProductDetails.jsx">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
       </file>
       <file name="ShareSocial.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Product Details/ShareSocial.jsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="12" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="components.Overview.Style Selector">
-      <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="StyleSelector.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Style Selector/StyleSelector.jsx">
-        <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="31" count="0" type="stmt"/>
-      </file>
-      <file name="StyleThumbnails.jsx" path="/Users/T-Spoon/FEC - Project Atelier/Front_End_Capstone/client/src/components/Overview/Style Selector/StyleThumbnails.jsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
     </package>
   </project>
