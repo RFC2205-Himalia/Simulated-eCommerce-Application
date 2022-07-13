@@ -1,0 +1,38 @@
+/*
+
+Below the product information, the user should be presented all the styles of the product and have the ability to toggle between them.
+Each style should be displayed as a thumbnail.
+All styles should display for the current product at all times. There is no limit to the number of styles a product can have.
+The thumbnails should appear in rows of 4.
+The current selection should be indicated within the list by the overlay of a checkmark on top of the thumbnail for that style.
+Additionally, the title for that style should appear typed out in full above the thumbnail list.
+A user will be able to change the selected style by clicking on the thumbnail displaying that style.
+Clicking on the thumbnail for the currently selected style will have no impact.
+By default, the style selected will be the first in the list.
+A product will always have at least one style.
+Only one style can be selected at a time. A style must be selected at all times.
+
+*/
+
+import React from 'react';
+import { useSelector } from 'react-redux';
+import StyleThumbnails from './StyleThumbnails.jsx'
+
+function StyleSelector () {
+  const styleList = useSelector((state) => state.stylesList.styles.results)
+  console.log('Style\'s List', styleList)
+  const currentStyle = useSelector((state) => state.stylesList.currentStyle)
+  console.log('Current Style', currentStyle)
+
+  return (styleList ? (
+    <div>
+      <div><b>Selected Style > </b> {styleList[currentStyle].name}</div>
+      {styleList.map((style, index) => {
+        return <StyleThumbnails key={'StyleThumbnail-' + index} style={style}/>
+      })}
+    </div>
+  ) : <div>Styles are not loaded yet</div>)
+
+}
+
+export default StyleSelector

@@ -11,18 +11,18 @@ import { useSelector } from 'react-redux';
 
 function Price () {
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  console.log('Style List', styleList);
+  // console.log('Style List', styleList);
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  console.log('currentStyle', currentStyle)
+  // console.log('currentStyle', currentStyle)
   let originalPrice = 0;
   let salePrice = null;
 
   if (styleList) {
     styleList.map((style, index) => {
-      if(index === 2) {
+      if(index === currentStyle) {
         originalPrice = style.original_price
         salePrice = style.sale_price
-        console.log('got prices', originalPrice, salePrice)
+        // console.log('got prices', originalPrice, salePrice)
       }
     })
   }

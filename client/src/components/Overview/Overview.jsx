@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ProductDetails from './Product Details/ProductDetails.jsx'
+import StyleSelector from './Style Selector/StyleSelector.jsx'
 
 import { useDispatch } from "react-redux";
 import { getStyles, setCurrentStyle } from '../../Features/Styles.js'
@@ -29,7 +30,7 @@ function Overview () {
     <div>
       <h1>Overview Component</h1>
       <ProductDetails />
-
+      <StyleSelector />
 
     </div>
     )
