@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import Price from './Product Details/Price.jsx'
+import Details from './Product Details/Details.jsx'
+
 import { useSelector, useDispatch } from "react-redux";
-import Price from './Price.jsx'
 import { getStyles, setCurrentStyle } from '../../Features/Styles.js'
 import { useEffect } from "react";
 
@@ -34,6 +36,8 @@ function Overview () {
       <h3>{productName}</h3>
       <h4>{productCategory}</h4>
       <Price />
+      <Details />
+
     </div>
     )
 }
