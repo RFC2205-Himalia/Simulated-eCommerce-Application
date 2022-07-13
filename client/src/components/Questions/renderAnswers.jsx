@@ -2,8 +2,15 @@ import React from "react";
 import Helpful from './helpfulComponent.jsx';
 import { convertDate } from "./eventHandlers.jsx";
 
+import { useDispatch, useSelector } from "react-redux";
 
-function Answers({answersSorted, question}) {
+
+function Answers({question}) {
+
+  const dispatch = useDispatch();
+  const answersSorted = useSelector(state => state.questions.sortedAnswers);
+
+
 
   const intitialStyle = {
     'fontSize': '14px',
@@ -25,4 +32,4 @@ function Answers({answersSorted, question}) {
 }
 
 
-export {Answers};
+export default Answers;

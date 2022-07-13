@@ -1,5 +1,11 @@
+import React from "react";
+import reactDOM from "react-dom";
+import { useDispatch } from "react-redux";
+
 // Have answers into array more easily accesible
 function Sort(data) {
+  const dispatch = useDispatch();
+
   let questionAnswers = {};
   data.map((question) => {
     let answers = Object.keys(question.answers);

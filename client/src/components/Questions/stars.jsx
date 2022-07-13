@@ -23,7 +23,7 @@ function stars() {
 
         return (
           <div key={index} position="realtive">
-            <div style={{ width: `${0}%`, overflow: "hidden", position: "absolute" }}>
+            <div style={{ width: `${25}%`, overflow: "hidden", position: "absolute" }}>
               <RiStarSFill />
             </div>
             <div>

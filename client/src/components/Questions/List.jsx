@@ -1,9 +1,11 @@
 import React from "react";
+import reactDOM from "react-dom";
 import Helpful from './helpfulComponent.jsx';
-import { Answers } from './renderAnswers.jsx';
+import Answers from './renderAnswers.jsx';
 import { useSelector} from 'react-redux';
 
 function List() {
+
   const list = useSelector(state => state.questions.questions);
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
 

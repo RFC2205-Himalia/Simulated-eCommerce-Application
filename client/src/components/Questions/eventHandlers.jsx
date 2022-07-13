@@ -1,10 +1,3 @@
-// import { addRender } from "../../Features/questions.js";
-// import { useDispatch, useSelector } from "react-redux";
-
-// // Generic Click Handler
-//   const clickHandler = (e) => {
-//     console.log(`Clicked ${e.target.title ? e.target.title : ''} ${e.target.id ? `with id ${e.target.id}` : ''}`)
-//   }
 
   // Used to convert date from string to month, dd yyyy format
   const convertDate = (date) => {
@@ -40,5 +33,7 @@
   const reportHandler = (e) => {
     console.log(`Reported Clicked with ID ${e.target.id}`);
   }
+
+
 
 export {convertDate, changeHandler, addQuestionHandler, reportHandler, moreHandler, queryHandler, helpfulHandler};
