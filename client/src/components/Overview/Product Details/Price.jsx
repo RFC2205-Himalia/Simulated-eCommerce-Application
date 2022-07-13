@@ -43,9 +43,6 @@ if (!salePrice) {
   )
 }
 
-
-
-
 }
 
 export default Price

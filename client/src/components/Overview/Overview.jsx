@@ -1,19 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import Price from './Product Details/Price.jsx'
-import Details from './Product Details/Details.jsx'
+import ProductDetails from './Product Details/ProductDetails.jsx'
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getStyles, setCurrentStyle } from '../../Features/Styles.js'
 import { useEffect } from "react";
 
 function Overview () {
   const dispatch = useDispatch();
-  const productName = useSelector((state) => state.addProduct.products.name)
-  const productCategory = useSelector((state) => state.addProduct.products.category)
-
   const product = '66644'
-
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}/styles`)
     .then((success) => {
@@ -33,10 +28,8 @@ function Overview () {
     return (
     <div>
       <h1>Overview Component</h1>
-      <h3>{productName}</h3>
-      <h4>{productCategory}</h4>
-      <Price />
-      <Details />
+      <ProductDetails />
+
 
     </div>
     )
