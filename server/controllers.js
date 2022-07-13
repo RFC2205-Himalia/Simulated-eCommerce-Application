@@ -31,10 +31,12 @@ const post = (req, res) => {
 
 const put = (req, res) => {
   console.log("putting");
-  const urlTail = req.body.url
+  const urlTail = req.url
+  // console.log(urlTail);
   Model.putProductData(urlTail)
   .then((success) => {
-    res.status(201).send(success)
+    console.log(success.status);
+    res.status(204).send(success.data)
   })
   .catch((error) => {
     res.status(500).send(error.message);

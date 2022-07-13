@@ -26,7 +26,7 @@ const getProductData = (urlTail) => {
 }
 
 const postProductData = (urlTail,data) => {
-  // console.log(data);
+  console.log(data);
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc${urlTail}`,
     headers: {
@@ -39,8 +39,9 @@ const postProductData = (urlTail,data) => {
 }
 
 const putProductData = (urlTail) => {
+  console.log("in model");
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc/${urlTail}`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc${urlTail}`,
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${process.env.AUTH_TOKEN}`
