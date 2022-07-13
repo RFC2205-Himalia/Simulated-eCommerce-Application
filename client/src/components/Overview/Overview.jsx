@@ -2,10 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import ProductDetails from './Product Details/ProductDetails.jsx'
 import StyleSelector from './Style Selector/StyleSelector.jsx'
+import AddCart from './Add Cart/AddCart.jsx'
 
 import { useDispatch } from "react-redux";
 import { getStyles, setCurrentStyle } from '../../Features/Styles.js'
 import { useEffect } from "react";
+
+
 
 function Overview () {
   const dispatch = useDispatch();
@@ -29,8 +32,9 @@ function Overview () {
     return (
     <div>
       <h1>Overview Component</h1>
-      <ProductDetails />
+      <ProductDetails data-testid="productDetails"/>
       <StyleSelector />
+      <AddCart />
 
     </div>
     )
