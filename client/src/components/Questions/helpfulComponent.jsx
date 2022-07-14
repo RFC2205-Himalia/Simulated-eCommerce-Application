@@ -3,6 +3,7 @@ import Styled from 'styled-components';
 
 function Helpful (props) {
 
+  // Tracks if question or answer have been reported
   const [reported, setReported] = useState({});
   const updateReport = (e) => {
     setReported({
@@ -11,6 +12,7 @@ function Helpful (props) {
     })
   }
 
+  // Tracks if question or answer have already been incremeneted as helpful
   const [clicked, setClicked] = useState({});
   const updateClick = (e) => {
     setClicked({
@@ -18,18 +20,6 @@ function Helpful (props) {
       [e.target.id]: true
     })
   }
-
-
-
-  const underlineStyle = {
-    'fontSize': '14px',
-    'color': '#5c5c5c',
-    'textDecoration': 'underline'
-  };
-  const userStyle = {
-    'fontSize': '14px',
-    'color': '#5c5c5c',
-  };
 
   // Aliases to clean up the render component
   let id = props.data.id || props.data.question_id;
@@ -42,8 +32,6 @@ function Helpful (props) {
   if (props.data.question_id) {
     type = "question";
   }
-
-
 
   return (
     <div>
@@ -62,3 +50,17 @@ function Helpful (props) {
 }
 
 export default Helpful;
+
+
+
+
+// Styling for component
+const underlineStyle = {
+  'fontSize': '14px',
+  'color': '#5c5c5c',
+  'textDecoration': 'underline'
+};
+const userStyle = {
+  'fontSize': '14px',
+  'color': '#5c5c5c',
+};
