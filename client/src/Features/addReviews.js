@@ -7,18 +7,22 @@ export const addReviewsSlice = createSlice({
       page: 0,
       count: 0,
       reviews: [],
+      avgReviewScore: 3
     },
   reducers: {
     addReviews: (state, action) => {
-      state.reviews = action.payload.results;
-      state.product = action.payload.product;
-      state.page = action.payload.page;
-      state.count = action.payload.count;
+      state.reviews = action.payload.results || state.reviews;
+      state.product = action.payload.product || state.product;
+      state.page = action.payload.page || state.page;
+      state.count = action.payload.count || state.count;
       console.log(state);
+    },
+    addAvgScore: (state, action) => {
+      state.avgReviewScore = action.payload;
     }
   }
 })
 
-export const {addReviews} = addReviewsSlice.actions
+export const {addReviews, addAvgScore} = addReviewsSlice.actions
 
 export default addReviewsSlice.reducer;

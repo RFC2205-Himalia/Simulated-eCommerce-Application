@@ -16,11 +16,6 @@ function ReviewWidget () {
 
   useEffect(() => {
     console.log(sampleData);
-    let aggregateReviewScore = 0;
-    sampleData.results.forEach((element) => {
-      aggregateReviewScore += element.rating;
-    })
-
   }, [sampleData]);
 
     return (
