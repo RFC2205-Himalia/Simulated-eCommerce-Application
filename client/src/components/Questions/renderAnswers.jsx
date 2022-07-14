@@ -28,6 +28,7 @@ function Answers(props) {
     'maxHeight': '200px',
   };
 
+
   let initialLength = answersInitial[props.question.question_id].length;
   let totalLength = answersSorted[props.question.question_id].length;
 
@@ -37,7 +38,7 @@ function Answers(props) {
         return <li style={{ 'listStyle': 'none', 'fontSize': '18px'}} key={answer.id}><b>A: </b>{answer.body}
         <br></br>
           <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
-          <Helpful data={answer} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler}/>
+          <Helpful data={answer} title={props.question.question_id} reported={false} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler}/>
         </li>
       }) : "No answers to question"}
       <br></br>

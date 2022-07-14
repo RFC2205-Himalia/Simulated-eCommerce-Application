@@ -32,16 +32,29 @@ function Questions () {
   var countReq = `count=${counter}` // Temporary hard coding of ID
 
   // componentDidMount replacement
-  const isInitialMount = useRef(true);
   useEffect(() => {
-    if (isInitialMount.current) {
-      getRequests(productReq, countReq)
-      console.log('mounted');
-       isInitialMount.current = false;
-    } else {
-        renderAnswers()
+    getRequests(productReq, countReq)
+    console.log('mounted');
+  }, []);
+
+
+  useEffect(() => {
+    let size = questions.length;
+    if (size > 0) {
+      dispatch(sorted(Sort(questions)))
+      dispatch(addRender((questions).slice(0, 4)));
     }
-  }, [sortedAnswers]);
+  }, [questions])
+
+  useEffect(() => {
+    let size = Object.keys(sortedAnswers).length;
+    if (size > 0) {
+      renderAnswers(sortedAnswers)
+    }
+  }, [sortedAnswers])
+
+
+
 
 // Sends out request for Q&A data for specified product ID
   const getRequests = (productID) => {
@@ -49,8 +62,6 @@ function Questions () {
     axios.get(`http://localhost:3000/qa/${url}`)
     .then((success) => {
       dispatch(questionList(success.data.results));
-      dispatch(sorted(Sort(success.data.results)));
-      dispatch(addRender((success.data.results).slice(0, 4)));
     })
     .catch((error) => {
       console.log("error", error)
@@ -117,17 +128,15 @@ function Questions () {
 
   // Have it change the report value from false to true in the question state. Do not just toggle since it can only be reported once. Then add question/asnwer to array of reported questions/answers to be looked over later.
   const reportHandler = (type, e) => {
-    dispatch(reportedTracker()),
     putRequests(`${type}s/${e.target.id}/report`)
-    console.log(`Reported Clicked with ID ${e.target.id}`);
   }
 
   // Intial load of 2 answers, on click loads them all for specific question
-  const renderAnswers = () => {
-    let questionIDs = Object.keys(sortedAnswers);
+  const renderAnswers = (list) => {
+    let questionIDs = Object.keys(list);
     let loadList = {};
     questionIDs.forEach((question) => {
-      loadList[question] = (sortedAnswers[question]).slice(0, 2);
+      loadList[question] = (list[question]).slice(0, 2);
     })
     dispatch(answerRender(loadList));
   }

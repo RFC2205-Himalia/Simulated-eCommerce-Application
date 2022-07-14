@@ -30,7 +30,15 @@ export const questionData = createSlice({
       state.count = 4;
     },
     reportedTracker: (state, action) => {
-      state.reported = state.reported + action.payload
+      console.log('payload: ', action.payload);
+      return {
+        ...state,
+        renderList: state.renderList.map((question) => {
+          //console.log(question)
+          question.question_id === action.payload ?
+           { ...question, reported: true } : question
+        })
+      }
     }
   }
 })

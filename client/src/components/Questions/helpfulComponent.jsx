@@ -1,6 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
+import Styled from 'styled-components';
 
 function Helpful (props) {
+
+  const [reported, setReported] = useState({});
+  const updateReport = (e) => {
+    setReported({
+      ...reported,
+      [e.target.id]: true
+    })
+  }
+
+  const [clicked, setClicked] = useState({});
+  const updateClick = (e) => {
+    setClicked({
+      ...clicked,
+      [e.target.id]: true
+    })
+  }
+
+
 
   const underlineStyle = {
     'fontSize': '14px',
@@ -12,17 +31,31 @@ function Helpful (props) {
     'color': '#5c5c5c',
   };
 
+  // Aliases to clean up the render component
   let id = props.data.id || props.data.question_id;
   let helpfulness = props.data.helpfulness || props.data.question_helpfulness;
+  let wasClicked = clicked[id] !== true;
+  let isReported = reported[id] === true;
+
+  // Set type to use as route guidance on handler
+  let type = 'answer';
+  if (props.data.question_id) {
+    type = "question";
+  }
+
+
 
   return (
     <div>
       <span style={userStyle}>Helpful?</span>&nbsp;
       <span style={userStyle}>|</span>&nbsp;
-      <span style={underlineStyle} title="Yes" id={id} onClick = {(e) => props.helpfulHandler(e)}>Yes</span>&nbsp;
-      <span style={userStyle}>({helpfulness})</span>&nbsp;
+      <span style={underlineStyle} title="Yes" id={id} onClick = {wasClicked ? (e) => {props.helpfulHandler(type, e); updateClick(e)} : null }>Yes</span>&nbsp;
+      <span style={userStyle}>({helpfulness || 0})</span>&nbsp;
       <span style={userStyle}>|</span>&nbsp;
-      <span style={underlineStyle} id={id} onClick = {(e) => !props.data.reported ? props.reportHandler('question', e) : null}>{!props.data.reported ? 'Report' : 'Reported'}</span>
+      {type === 'question' ? <span style={underlineStyle}>Add Answer</span> : null}&nbsp;
+      <span style={userStyle}>|</span>&nbsp;
+      <span style={underlineStyle} id={id} onClick = {!isReported ? (e) => {props.reportHandler(type, e); updateReport(e)} : null }>{isReported ? 'Reported' : 'Report'}</span>
+
     </div>
 
   )

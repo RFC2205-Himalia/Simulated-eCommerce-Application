@@ -6,7 +6,7 @@ import { useSelector} from 'react-redux';
 function List(props) {
   const list = useSelector(state => state.questions.renderList);
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
-
+  const renderAnswers = useSelector(state => state.questions.renderAnswers);
 
 
   const scrollable =
@@ -22,7 +22,7 @@ function List(props) {
             <br></br>
           <span style={{'fontSize': '20px'}}><b>Q: {question.question_body}</b></span>
           <Helpful title={question.question_id} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} data={question}/>
-          <Answers answersSorted={answersSorted} question={question} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} answerHandler={props.answerHandler} answerCollapseHandler={props.answerCollapseHandler}/>
+          {Object.keys(renderAnswers).length > 0 ? <Answers answersSorted={answersSorted} question={question} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} answerHandler={props.answerHandler} answerCollapseHandler={props.answerCollapseHandler}/> : null}
           </div>
       }) : null }
     </div>
