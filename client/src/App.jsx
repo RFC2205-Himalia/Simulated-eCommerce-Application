@@ -7,6 +7,8 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addProduct } from "./Features/addProduct.js"
+import { addReviews } from "./Features/addReviews.js"
+
 
 
 
@@ -15,16 +17,24 @@ import { addProduct } from "./Features/addProduct.js"
 
 function App () {
   const dispatch = useDispatch();
-  var product = '66643'
+  var product = '66646'
 
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}`)
     .then((success) => {
-      console.log("success", success)
+      // console.log("success", success)
       dispatch(addProduct(success.data))
     })
     .catch((error) => {
-      console.log("error", error)
+      // console.log("error", error)
+    })
+    
+    axios.get(`http://localhost:3000/reviews?product_id=${productID}`)
+    .then((success) => {
+      dispatch(addReviews(success.data));
+    })
+    .catch((err) => {
+      console.log(err);
     })
   }
 
