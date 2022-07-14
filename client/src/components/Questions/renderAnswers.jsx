@@ -9,7 +9,6 @@ function Answers(props) {
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
   const answersInitial = useSelector(state => state.questions.renderAnswers);
 
-
   // Converts date from string to appropriate format
   const convertDate = (date) => {
     let convertedDate = (new Date(date)).toLocaleDateString(undefined, {year:"numeric", month:"long", day:"numeric"})
@@ -41,7 +40,7 @@ function Answers(props) {
         return <li style={{ 'listStyle': 'none', 'fontSize': '18px'}} key={answer.id}><b>A: </b>{answer.body}
         <br></br>
           <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
-          <Helpful data={answer} title={id} reported={false} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler}/>
+          <Helpful data={answer} title={id} reported={false}/>
         </li>
       }) : "No answers to question"}
       <br></br>

@@ -5,44 +5,43 @@ export const questionData = createSlice({
   initialState: {
     count: 4,
     questions: [],
+    unchangingAnswers: [],
     sortedAnswers: [],
+    searching: false,
     renderList: [],
     renderAnswers: [],
-    reported: [],
   },
   reducers: {
     questionList: (state, action) => {
-      state.questions = action.payload
+      state.questions = action.payload;
     },
     sorted: (state, action) => {
-      state.sortedAnswers = action.payload
+      state.sortedAnswers = action.payload;
+    },
+    answersUnchange: (state, action) => {
+      state.unchangingAnswers = action.payload;
     },
     addRender: (state, action) => {
-      state.renderList = action.payload
+      state.renderList = action.payload;
+    },
+    questionsUnchange: (state, action) => {
+      state.unchangingQuestion = action.payload;
     },
     answerRender: (state, action) => {
-      state.renderAnswers = action.payload
+      state.renderAnswers = action.payload;
     },
     incrementCount: (state) => {
-      state.count = state.count + 2
+      state.count = state.count + 2;
     },
     resetCount: (state) => {
       state.count = 4;
     },
-    reportedTracker: (state, action) => {
-      console.log('payload: ', action.payload);
-      return {
-        ...state,
-        renderList: state.renderList.map((question) => {
-          //console.log(question)
-          question.question_id === action.payload ?
-           { ...question, reported: true } : question
-        })
-      }
-    }
+    searchingRender: (state, action) => {
+      state.searching = action.payload;
+    },
   }
 })
 
-export const {questionList, sorted, addRender, incrementCount, resetCount, renderAnswers, answerRender, reportedTracker} = questionData.actions
+export const {questionList, sorted, addRender, incrementCount, resetCount, renderAnswers, answerRender, reportedTracker, answersUnchange, questionsUnchange, searchingRender} = questionData.actions
 
 export default questionData.reducer;

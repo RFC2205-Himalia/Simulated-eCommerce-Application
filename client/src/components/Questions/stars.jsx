@@ -5,7 +5,7 @@ import { RiStarSLine } from "react-icons/ri"
 function stars() {
 
   const totalStars = 5;
-  const active = 3; //REPLACE WITH VARIABLE FOR RATING NUMBER
+  const active = 1; //REPLACE WITH VARIABLE FOR RATING NUMBER
 
   const style = {
     display: "inline-flex",

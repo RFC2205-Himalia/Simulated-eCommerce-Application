@@ -3,7 +3,7 @@ import Helpful from './helpfulComponent.jsx';
 import Answers from './renderAnswers.jsx';
 import { useSelector} from 'react-redux';
 
-function List(props) {
+function List() {
   const list = useSelector(state => state.questions.renderList);
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
   const renderAnswers = useSelector(state => state.questions.renderAnswers);
@@ -14,8 +14,8 @@ function List(props) {
         return <div key = {`${question.question_id}`}>
             <br></br>
           <span style={{'fontSize': '20px'}}><b>Q: {question.question_body}</b></span>
-          <Helpful title={question.question_id} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} data={question}/>
-          {Object.keys(renderAnswers).length > 0 ? <Answers answersSorted={answersSorted} question={question} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler}/> : null}
+          <Helpful title={question.question_id} data={question}/>
+          {Object.keys(renderAnswers).length > 0 ? <Answers question={question}/> : null}
           </div>
       }) : null }
     </div>
