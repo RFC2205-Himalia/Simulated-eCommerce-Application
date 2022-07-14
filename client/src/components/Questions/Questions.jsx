@@ -7,37 +7,34 @@ import Stars from "./stars.jsx";
 import { GoSearch } from "react-icons/go"
 
 import { useDispatch, useSelector } from "react-redux";
-import { questionList, sorted, addRender, incrementCount, resetCount, answerRender, reportedTracker} from "../../Features/questions.js";
-import { useEffect, useRef } from "react";
-
-
-
-// MOVE ALL THESE HANDLERS TO THEIR OWN PAGE WHEN ABLE. ALL THESE ON HERE MAKE IT MESSY
+import { questionList, sorted, addRender, incrementCount, resetCount, answerRender} from "../../Features/questions.js";
+import { useEffect } from "react";
 
 function Questions () {
+
+  // Hardcoded value for now, replace later with dynamic from URL
+  var productNumber = 66612;
+  // Variables to pass on current product id
+  var productReq = `questions?product_id=${productNumber}`
+  var textInput = '';
+
+
   // State components used later in file
   const dispatch = useDispatch();
   const counter = useSelector(state => state.questions.count);
   const questions = useSelector(state => state.questions.questions);
   const rendered = useSelector(state => state.questions.renderList);
   const sortedAnswers = useSelector(state => state.questions.sortedAnswers);
-  const answers = useSelector(state => state.questions.renderAnswers);
 
-  var textInput = '';
 
-  // Hardcoded value for now, replace later with dynamic from URL
-  var productNumber = 66678;
-  // Not hard coded values
-  var productReq = `questions?product_id=${productNumber}`
-  var countReq = `count=${counter}` // Temporary hard coding of ID
+
+
 
   // componentDidMount replacement
   useEffect(() => {
-    getRequests(productReq, countReq)
-    console.log('mounted');
+    getRequests(productReq)
   }, []);
-
-
+  // Updates both sorted answers and question renderlist when questions are populated
   useEffect(() => {
     let size = questions.length;
     if (size > 0) {
@@ -45,20 +42,15 @@ function Questions () {
       dispatch(addRender((questions).slice(0, 4)));
     }
   }, [questions])
-
+  // Update shorter answer lits to be rendered after they have been sorted
   useEffect(() => {
     let size = Object.keys(sortedAnswers).length;
     if (size > 0) {
       renderAnswers(sortedAnswers)
     }
   }, [sortedAnswers])
-
-
-
-
 // Sends out request for Q&A data for specified product ID
-  const getRequests = (productID) => {
-    let url = `${productID}`
+  const getRequests = (url) => {
     axios.get(`http://localhost:3000/qa/${url}`)
     .then((success) => {
       dispatch(questionList(success.data.results));
@@ -67,7 +59,6 @@ function Questions () {
       console.log("error", error)
     })
   }
-
   // Creates new message or answer
   const postRequests = (productID, number) => {
     let url = ``;
@@ -80,17 +71,18 @@ function Questions () {
       console.log("error", error)
     })
   }
-  // Sends request to report question
+  // Sends request to report question or answer
   const putRequests = (qOrAID) => {
     let url = `${qOrAID}`;
     axios.put(`http://localhost:3000/qa/${url}`)
-    .then((success) => {
-      console.log('Reported')
+    .then(() => {
+      console.log('PUT')
     })
     .catch((error) => {
       console.log("error", error)
     })
   };
+
 
   // Generic change handler
   const changeHandler = (e) => {
@@ -98,32 +90,22 @@ function Questions () {
   }
   // Search answers based on value, do not send if not over 3 chars
   const queryHandler = () => {
+    // if char count is >= 3
+      // check questions and answers for ispresent()
+      // return list of filtered results
     console.log(`Query with value "${textInput}"`);
   }
   // pop out form to fill out to add question
   const addQuestionHandler = () => {
+    // Send POST request with appropriate info attached
+      //  /qa/questions/:question_id/answers
+      //body, name, email, photos=[]
     console.log(`Add An Answer Clicked`);
   }
 
-  // Render 2 new answers
-  const moreHandler = () => {
-    console.log('More Answers Clicked');
-    async function increment() {
-      await dispatch(incrementCount())
-    }
-    increment().then(dispatch(addRender(questions.slice(0, counter + 2)))); // It seems to update count before it dispatches addRender but is always behind
-    console.log('done');
-  }
-
-  // Collaspe question list down to default amount
-  const collapseHandler = () => {
-    dispatch(resetCount());
-    dispatch(addRender(questions.slice(0, 4)))
-  }
-
   // Incrememnt helpful count
-  const helpfulHandler = (e) => {
-    console.log(`YES Clicked at ID ${e.target.id}`)
+  const helpfulHandler = (type, e) => {
+    putRequests(`${type}s/${e.target.id}/helpful`)
   }
 
   // Have it change the report value from false to true in the question state. Do not just toggle since it can only be reported once. Then add question/asnwer to array of reported questions/answers to be looked over later.
@@ -131,7 +113,7 @@ function Questions () {
     putRequests(`${type}s/${e.target.id}/report`)
   }
 
-  // Intial load of 2 answers, on click loads them all for specific question
+  // Intial load of 2 answers
   const renderAnswers = (list) => {
     let questionIDs = Object.keys(list);
     let loadList = {};
@@ -140,24 +122,20 @@ function Questions () {
     })
     dispatch(answerRender(loadList));
   }
-  // Shows all answers for specific question
-  const answerHandler = (e) => {
-    let loadList= Object.assign({}, answers);
-    loadList[e.target.id] = (sortedAnswers[e.target.id]);
-    dispatch(answerRender(loadList));
+  // Render 2 more questions
+  const moreHandler = () => {
+    console.log('More Answers Clicked');
+    async function increment() {
+      await dispatch(incrementCount())
+    }
+    increment().then(dispatch(addRender(questions.slice(0, counter + 2)))); // It seems to update count before it dispatches addRender but is always behind
+    console.log('done');
   }
-  // Returns answers list for question to default list
-  const answerCollapseHandler = (e) => {
-    let loadList= Object.assign({}, answers);
-    loadList[e.target.id] = (sortedAnswers[e.target.id]).slice(0, 2);
-    dispatch(answerRender(loadList));
+  // Collaspe question list down to default amount
+  const collapseHandler = () => {
+    dispatch(resetCount());
+    dispatch(addRender(questions.slice(0, 4)))
   }
-
-
-// CSS styling to make things easier to look at
-  const formStyle = {
-    'width': '325px',
-  };
 
 
 
@@ -169,7 +147,7 @@ function Questions () {
           <input style={formStyle} type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...' onChange={(e) => changeHandler(e)}/>
           <GoSearch id='query' onClick = {queryHandler}/>
       </form>
-      <List helpfulHandler={helpfulHandler} reportHandler={reportHandler} answerHandler={answerHandler} answerCollapseHandler={answerCollapseHandler}/>
+      <List helpfulHandler={helpfulHandler} reportHandler={reportHandler}/>
       <br></br>
       {rendered.length > 0 && rendered.length < questions.length ? <button title="More" onClick={moreHandler} type='button'>MORE ANSWERED QUESTIONS</button> : null}
       {rendered.length > 4 && rendered.length <= questions.length ? <button title="More" onClick={collapseHandler} type='button'>COLLAPSE QUESTIONS</button> : null}
@@ -179,3 +157,9 @@ function Questions () {
 }
 
 export default Questions;
+
+
+// CSS styling to make things easier to look at
+const formStyle = {
+  'width': '325px',
+};

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import Styled from 'styled-components';
 
 function Helpful (props) {
+  // Currently only lets you click yes or report once, but on refresh can click yes again. Will need to use cookie or something to track user later.
 
   // Tracks if question or answer have been reported
   const [reported, setReported] = useState({});
@@ -24,8 +24,10 @@ function Helpful (props) {
   // Aliases to clean up the render component
   let id = props.data.id || props.data.question_id;
   let helpfulness = props.data.helpfulness || props.data.question_helpfulness;
-  let wasClicked = clicked[id] !== true;
+  let wasClicked = clicked[id] === true;
   let isReported = reported[id] === true;
+  let helpCount = helpfulness || 0;
+  let helped = helpfulness + 1;
 
   // Set type to use as route guidance on handler
   let type = 'answer';
@@ -37,13 +39,12 @@ function Helpful (props) {
     <div>
       <span style={userStyle}>Helpful?</span>&nbsp;
       <span style={userStyle}>|</span>&nbsp;
-      <span style={underlineStyle} title="Yes" id={id} onClick = {wasClicked ? (e) => {props.helpfulHandler(type, e); updateClick(e)} : null }>Yes</span>&nbsp;
-      <span style={userStyle}>({helpfulness || 0})</span>&nbsp;
+      <span style={underlineStyle} title="Yes" id={id} onClick = {!wasClicked ? (e) => {props.helpfulHandler(type, e); updateClick(e)} : null }>Yes</span>&nbsp;
+      <span style={userStyle}>{wasClicked ? helped : helpCount})</span>&nbsp;
       <span style={userStyle}>|</span>&nbsp;
       {type === 'question' ? <span style={underlineStyle}>Add Answer</span> : null}&nbsp;
       <span style={userStyle}>|</span>&nbsp;
       <span style={underlineStyle} id={id} onClick = {!isReported ? (e) => {props.reportHandler(type, e); updateReport(e)} : null }>{isReported ? 'Reported' : 'Report'}</span>
-
     </div>
 
   )

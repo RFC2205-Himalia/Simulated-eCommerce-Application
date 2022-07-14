@@ -8,13 +8,6 @@ function List(props) {
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
   const renderAnswers = useSelector(state => state.questions.renderAnswers);
 
-
-  const scrollable =
-  {
-    'overflow': 'scroll',
-    'maxHeight': '500px',
-  };
-
   return (
     <div style={scrollable}>
       {answersSorted ? list.map((question) => {
@@ -22,7 +15,7 @@ function List(props) {
             <br></br>
           <span style={{'fontSize': '20px'}}><b>Q: {question.question_body}</b></span>
           <Helpful title={question.question_id} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} data={question}/>
-          {Object.keys(renderAnswers).length > 0 ? <Answers answersSorted={answersSorted} question={question} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler} answerHandler={props.answerHandler} answerCollapseHandler={props.answerCollapseHandler}/> : null}
+          {Object.keys(renderAnswers).length > 0 ? <Answers answersSorted={answersSorted} question={question} helpfulHandler={props.helpfulHandler} reportHandler={props.reportHandler}/> : null}
           </div>
       }) : null }
     </div>
@@ -30,3 +23,10 @@ function List(props) {
 }
 
 export default List;
+
+// CSS styling
+const scrollable =
+{
+  'overflow': 'scroll',
+  'maxHeight': '500px',
+};
