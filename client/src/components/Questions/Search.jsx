@@ -69,12 +69,12 @@ function Search() {
 
 
   return (
-    <div>
-      <form>
-        <input style={formStyle} type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...' onChange={(e) => changeHandler(e)}/>
-        <GoSearch id='query' onClick= {queryHandler}/>
+      <form style={formStyle}>
+        <div className='form'>
+         <input style={inputStyle} type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...' onChange={(e) => changeHandler(e)}/>
+         <span className="icon" style={icon}><GoSearch onClick= {queryHandler}/></span>
+        </div>
       </form>
-    </div>
   )
 }
 
@@ -84,5 +84,21 @@ export default Search;
 
 // CSS styling to make things easier to look at
 const formStyle = {
+  'position': 'relative',
+  'display': 'block',
+  'alignItems': 'center',
+  'width': '100%',
+};
+
+const inputStyle = {
+  'position': 'relative',
+  'display': 'flex',
+  'alignItems': 'center',
   'width': '325px',
 };
+
+const icon = {
+  'position': 'absolute',
+  'left': '312px',
+  'top': '3px',
+}

@@ -53,7 +53,7 @@ function Helpful (props) {
   let wasClicked = clicked[id] === true;
   let isReported = reported[id] === true;
   let helpCount = helpfulness || 0;
-  let helped = helpfulness + 1;
+  let helped = helpfulness + 1 || 1;
 
   // Set type to use as route guidance on handler
   let type = 'answer';
@@ -68,9 +68,11 @@ function Helpful (props) {
       <span style={underlineStyle} title="Yes" id={id} onClick = {!wasClicked ? (e) => {helpfulHandler(type, e); updateClick(e)} : null }>Yes</span>&nbsp;
       <span style={userStyle}>{wasClicked ? helped : helpCount})</span>&nbsp;
       <span style={userStyle}>|</span>&nbsp;
-      {type === 'question' ? <span style={underlineStyle}>Add Answer</span> : null}&nbsp;
+      <span style={underlineStyle} id={id} onClick = {!isReported ? (e) => {reportHandler(type, e); updateReport(e)} : null }>{isReported ? 'Reported' : 'Report'}</span>&nbsp;
       <span style={userStyle}>|</span>&nbsp;
-      <span style={underlineStyle} id={id} onClick = {!isReported ? (e) => {reportHandler(type, e); updateReport(e)} : null }>{isReported ? 'Reported' : 'Report'}</span>
+      {type === 'question' ? <span style={underlineStyle}>Add Answer</span> : null}
+
+
     </div>
 
   )
