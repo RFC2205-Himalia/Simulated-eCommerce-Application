@@ -35,11 +35,35 @@ function Buttons(props) {
   return (
     <div>
       {rendered.length > 0 && rendered.length < questions.length && searching === false ?
-        <button title="More" onClick={moreHandler} type='button'>MORE ANSWERED QUESTIONS</button> : null}
+
+        <button
+          title="More"
+          onClick={moreHandler}
+          type='button'>
+            MORE ANSWERED QUESTIONS
+        </button> : null}
+
       {rendered.length > 4 && rendered.length <= questions.length ?
-        <button title="More" onClick={collapseHandler} type='button'>COLLAPSE QUESTIONS</button> : null}
-      <button title="Add" onClick={() => updateQuestionModal()} type='button'>ADD A QUESTION + </button>
-      {questionModal ? <QuestionsModal productID={props.product} closeModal={updateQuestionModal}/> : null}
+        <button
+          title="More"
+          onClick={collapseHandler}
+          type='button'>
+            COLLAPSE QUESTIONS
+        </button> : null}
+
+      <button
+        title="Add"
+        onClick={updateQuestionModal}
+        type='button'>
+          ADD A QUESTION +
+        </button>
+
+      {questionModal ?
+        <QuestionsModal
+          productID={props.product}
+          closeModal={updateQuestionModal}
+        /> : null}
+
     </div>
   )
 }

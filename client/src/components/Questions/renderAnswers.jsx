@@ -1,7 +1,7 @@
 import React from "react";
 import Helpful from './helpfulComponent.jsx';
 import { useDispatch, useSelector } from "react-redux";
-import { answerRender} from "../../Features/questions.js";
+import { answerRender } from "../../Features/questions.js";
 
 
 function Answers(props) {
@@ -11,18 +11,18 @@ function Answers(props) {
 
   // Converts date from string to appropriate format
   const convertDate = (date) => {
-    let convertedDate = (new Date(date)).toLocaleDateString(undefined, {year:"numeric", month:"long", day:"numeric"})
+    let convertedDate = (new Date(date)).toLocaleDateString(undefined, { timeZone: 'UTC', year: "numeric", month: "long", day: "numeric" })
     return convertedDate;
   }
   // Shows all answers for specific question
   const answerHandler = (e) => {
-    let loadList= Object.assign({}, answersInitial);
+    let loadList = Object.assign({}, answersInitial);
     loadList[e.target.id] = (answersSorted[e.target.id]);
     dispatch(answerRender(loadList));
   }
   // Returns answers list for question to default list
   const answerCollapseHandler = (e) => {
-    let loadList= Object.assign({}, answersInitial);
+    let loadList = Object.assign({}, answersInitial);
     loadList[e.target.id] = (answersSorted[e.target.id]).slice(0, 2);
     dispatch(answerRender(loadList));
   }
@@ -36,15 +36,35 @@ function Answers(props) {
   return (
     <ul style={scrollable}>
       {initialLength > 0 ? answersInitial[id].map((answer) => {
-        return <li style={{ 'listStyle': 'none', 'fontSize': '18px'}} key={answer.id}><b>A: </b>{answer.body}
-        <br></br>
-          <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
-          <Helpful data={answer} title={id} reported={false}/>
-        </li>
+        return (
+          <li style={{ 'listStyle': 'none', 'fontSize': '18px' }} key={answer.id}><b>A: </b>{answer.body}
+            <br></br>
+            <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
+            <Helpful
+              data={answer}
+              title={id}
+              reported={false}
+            />
+          </li>
+        )
       }) : "No answers to question"}
       <br></br>
-      {totalLength > 2 && initialLength < totalLength ? <span id={id} onClick={(e) => answerHandler(e)} style={underlineStyle}>Show All Answers</span> : null}
-      {initialLength === totalLength && totalLength > 2 ? <span id={id} onClick={(e) => answerCollapseHandler(e)} style={underlineStyle}>Collapse All Answers</span> : null}
+      {totalLength > 2 && initialLength < totalLength ?
+        <span
+          style={underlineStyle}
+          id={id}
+          onClick={(e) => answerHandler(e)}
+          >
+            Show All Answers
+        </span> : null}
+      {initialLength === totalLength && totalLength > 2 ?
+        <span
+          style={underlineStyle}
+          id={id}
+          onClick={(e) => answerCollapseHandler(e)}
+          >
+            Collapse All Answers
+        </span> : null}
     </ul>
 
 

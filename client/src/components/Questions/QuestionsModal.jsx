@@ -39,7 +39,7 @@ function QuestionsModal({ closeModal, productID }) {
         dispatch(refresh());
       })
       .catch((error) => {
-        console.log("error", error)
+        console.log("error", error.message)
       })
   }
   // When submitted, checks if errors
@@ -80,6 +80,7 @@ function QuestionsModal({ closeModal, productID }) {
         <form onSubmit={questionSubmitHandler}>
           <h2>Ask Your Question</h2>
           <h3>About the {product.name}</h3>
+
           <div style={formDiv} className="answer">
             <label>Your Question* </label>
             <input

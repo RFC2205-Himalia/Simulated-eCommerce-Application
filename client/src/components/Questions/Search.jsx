@@ -48,8 +48,7 @@ function Search() {
                 if(matchingQuestions.includes(item) !== true) {
                   let questionCopy = Object.assign({}, item);
                   questionCopy.answers = {};
-                  matchingQuestions.push(questionCopy); // Pushes entire question object still
-                  // Think it sends correct but reducers change it to normal
+                  matchingQuestions.push(questionCopy);
                 }
               }
             })

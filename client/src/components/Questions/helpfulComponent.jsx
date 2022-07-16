@@ -1,27 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import AnswersModal from "./AnswersModal.jsx";
 
 
-function Helpful (props) {
+function Helpful(props) {
   // Currently only lets you click yes or report once, but on refresh can click yes again. Will need to use cookie or something to track user later.
 
 
-    // Sends request to report question or answer
-    const putRequests = (qOrAID) => {
-      let url = `${qOrAID}`;
-      axios.put(`http://localhost:3000/qa/${url}`)
+  // Sends request to report question or answer
+  const putRequests = (qOrAID) => {
+    let url = `${qOrAID}`;
+    axios.put(`http://localhost:3000/qa/${url}`)
       .then(() => {
         console.log('PUT')
       })
       .catch((error) => {
         console.log("error", error)
       })
-    };
+  };
 
 
 
-      // Incrememnt helpful count
+  // Incrememnt helpful count
   const helpfulHandler = (type, e) => {
     putRequests(`${type}s/${e.target.id}/helpful`)
   }
@@ -80,25 +80,35 @@ function Helpful (props) {
       <span style={userStyle}>
         |
       </span>&nbsp;
-      <span style={underlineStyle} title="Yes" id={id} onClick = {!wasClicked ? (e) => {helpfulHandler(type, e); updateClick(e)} : null }>
+      <span
+        style={underlineStyle}
+        title="Yes"
+        id={id}
+        onClick={!wasClicked ? (e) => { helpfulHandler(type, e); updateClick(e) } : null}>
         Yes
       </span>&nbsp;
-      <span style={userStyle}>
+      <span
+        style={userStyle}>
         {wasClicked ? helped : helpCount})
       </span>&nbsp;
-      <span style={userStyle}>
-        |
-      </span>&nbsp;
-      <span style={underlineStyle} id={id} onClick = {!isReported ? (e) => {reportHandler(type, e); updateReport(e)} : null }>
+      <span
+        style={userStyle}> | </span>&nbsp;
+      <span
+        style={underlineStyle}
+        id={id}
+        onClick={!isReported ? (e) => { reportHandler(type, e); updateReport(e) } : null}>
         {isReported ? 'Reported' : 'Report'}
       </span>&nbsp;
       {type === 'question' ?
         <span>
-         <span style={userStyle}>|</span>&nbsp;
-          <span style={underlineStyle} id={id} onClick={(e) => updateModal(e.target.id)}>
+          <span style={userStyle}>|</span>&nbsp;
+          <span
+            style={underlineStyle}
+            id={id}
+            onClick={(e) => updateModal(e.target.id)}>
             Add Answer
           </span>
-          {showModal ? <AnswersModal data={props.data} closeModal={updateModal}/> : null}
+          {showModal ? <AnswersModal data={props.data} closeModal={updateModal} /> : null}
         </span> : null}
     </div>
 
