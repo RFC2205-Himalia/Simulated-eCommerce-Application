@@ -126,7 +126,8 @@ const underlineStyle = {
   'fontSize': '14px',
   'color': '#5c5c5c',
   'textDecoration': 'underline',
-  'cursor': 'pointer'
+  'cursor': 'pointer',
+  //"alignItems": "right"
 };
 const userStyle = {
   'fontSize': '14px',

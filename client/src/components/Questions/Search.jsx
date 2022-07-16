@@ -87,11 +87,14 @@ export default Search;
 // CSS styling to make things easier to look at
 const formStyle = {
   //"margin": "auto",
-  "display": "block",
+  "display": "flex",
+  "flexDirection": "column",
+  // "display": "block",
   "marginLeft": "auto",
   "marginRight": "auto",
-  "width": "60%",
-  // 'position': 'relative',
+  "width": "100%",
+  'position': 'relative',
+  "alignItems": "center"
   // 'display': 'inlineBlock',
   // 'selfAlign': 'center',
   // 'width': '50%',
@@ -107,7 +110,9 @@ const inputStyle = {
 };
 
 const icon = {
-  'position': 'relative',
-  'left': '58vw',
-  'cursor': 'pointer'
+  'position': 'absolute',
+  'right': '20vw',
+  'cursor': 'pointer',
+  "top": "30%",
+  "backgrounColor": "white"
 }

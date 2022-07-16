@@ -1,7 +1,7 @@
 import React from "react";
-import { RiStarSFill } from "react-icons/ri";
-import { RiStarSLine } from "react-icons/ri";
-import { RiStarHalfFill } from "react-icons/ri";
+// import { RiStarSFill } from "react-icons/ri";
+// import { RiStarSLine } from "react-icons/ri";
+// import { RiStarHalfFill } from "react-icons/ri";
 
 import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
@@ -10,7 +10,7 @@ import { IoMdStarHalf } from "react-icons/io";
 function stars() {
 
   const totalStars = 5;
-  const active = 3.3; //REPLACE WITH VARIABLE FOR RATING NUMBER
+  const active = 1.6; //REPLACE WITH VARIABLE FOR RATING NUMBER
 
   const style = {
     display: "inline-flex",

@@ -34,38 +34,38 @@ function Answers(props) {
   let totalLength = answersSorted[id].length;
 
   return (
-    <ul style={scrollable}>
+    <div >
       {initialLength > 0 ? answersInitial[id].map((answer) => {
         return (
-          <li style={{ 'listStyle': 'none', 'fontSize': '18px' }} key={answer.id}><b>A: </b>{answer.body}
+          <div style={answersStyle} key={answer.id}><b>A: </b>{answer.body}
             <br></br>
             <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
-            <Helpful
+            <Helpful className="answerHelp"
               data={answer}
               title={id}
               reported={false}
             />
-          </li>
+          </div>
         )
       }) : "No answers to question"}
       <br></br>
       {totalLength > 2 && initialLength < totalLength ?
         <span
-          style={underlineStyle}
+          style={answerClickable}
           id={id}
           onClick={(e) => answerHandler(e)}
           >
-            Show All Answers
+            LOAD MORE ANSWERS
         </span> : null}
       {initialLength === totalLength && totalLength > 2 ?
         <span
-          style={underlineStyle}
+          style={answerClickable}
           id={id}
           onClick={(e) => answerCollapseHandler(e)}
           >
-            Collapse All Answers
+            COLLAPSE ANSWERS
         </span> : null}
-    </ul>
+    </div>
 
 
   )
@@ -76,19 +76,30 @@ export default Answers;
 
 
 //CSS styling
-const underlineStyle = {
-  'fontSize': '14px',
+const answerClickable = {
+  'fontSize': '12px',
   'color': '#5c5c5c',
-  'textDecoration': 'underline',
-  'cursor': 'pointer'
-};
+  'cursor': 'pointer',
+  'fontWeight': 'bold'
+}
+
 const intitialStyle = {
   'fontSize': '14px',
   'color': '#5c5c5c',
   'paddingLeft': '22px'
 };
-const scrollable =
-{
-  'overflow': 'scroll',
-  'maxHeight': '200px',
+// const scrollable =
+// {
+//   'overflow': 'scroll',
+//   'maxHeight': '200px',
+// };
+
+const answersStyle = {
+  'position': 'relative',
+  'display': 'flex',
+  "flexDirection": "column",
+  'alignItems': 'left',
+  'width': '55vw',
+  "alignSelf": "center",
+  "textAlign": "left"
 };

@@ -79,8 +79,8 @@ function AnswersModal({ data, closeModal }) {
     <div style={modalBackground} className="modalBackground">
       <div style={modalContainer} className="modalContainer">
         <form onSubmit={answerSubmitHandler}>
-        <h2>Submit your Answer</h2>
-        <h3>{product.name}: {data.question_body}</h3>
+        <h2 style={headers} >Submit your Answer</h2>
+        <h3 style={headers}>{product.name}: {data.question_body}</h3>
 
           <div style={formDiv} className="answer">
             <label >Answer* </label>
@@ -157,9 +157,11 @@ export default AnswersModal;
 
 const error = {
   "color": "red",
+  'fontSize': '12px'
 }
 
 const modalBackground = {
+
   "width": "100vw",
   "position": "absolute",
   "height": "100vh",
@@ -173,37 +175,43 @@ const modalContainer = {
   "border": "2px solid black",
   "width": "auto",
   "height": "auto",
-  "left": "30vw",
-  "top": "25vh",
+   "left": "30vw",
+  "top": "30vh",
   "borderRadius": "12px",
   "backgroundColor": "white",
   "boxShadow": "grey",
-  // "display": "flex",
-  // "flexDirection": "column",
-  // "padding": "25px",
+  "display": "flex",
+  "flexDirection": "column",
+  "padding": "25px",
   "position": "absolute",
-  // "justifyContent": "center",
-  // "alignItems": "center",
+  "justifyContent": "center",
+  "alignItems": "center",
+}
+
+const headers = {
+  "maxWidth": "500px",
+  "right": "0",
+  "postition": "absolute",
+  "textAlign": "center",
 }
 
 const formDiv = {
   "display": "inlineBlock",
-  "width": "500px",
+  "maxWidth": "500px",
   "textAlign": "right",
   "marginRight": "100px"
 }
 
 const textBox = {
-  "width": "300px",
+  "maxWidth": "300px",
   "height": "25px",
-  // "margin": "10px",
+  "margin": "10px",
   "right": "0",
   "postition": "absolute",
 }
 const userStyle = {
   'fontSize': '12px',
   'color': '#5c5c5c',
-  // "justifyContent": "center",
   "marginRight": "10px",
 };
 const footer = {
@@ -213,7 +221,7 @@ const footer = {
 }
 
 const button = {
-  "width": "100px",
+  "maxWidth": "100px",
   "height": "25px",
   "margin": "10px",
   "border": "none",

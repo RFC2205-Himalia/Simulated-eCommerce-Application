@@ -12,10 +12,10 @@ function List() {
     <div style={scrollable}>
       {answersSorted ? list.map((question) => {
         return (
-          <div key={`${question.question_id}`}>
+          <div  style={questionsStyle} key={`${question.question_id}`}>
             <br></br>
             <span
-              style={{ 'fontSize': '20px' }}>
+              style={{ 'fontSize': '20px'}}>
               <b>Q: {question.question_body}</b>
             </span>
             <Helpful
@@ -35,6 +35,24 @@ export default List;
 // CSS styling
 const scrollable =
 {
+  "marginTop": "10px",
+  "position": "absolute",
   'overflow': 'scroll',
-  'maxHeight': '500px'
+  'maxHeight': '50vh',
+  "display": "flex",
+  "flexDirection": "column",
+  "width": "95%",
+  "alignSelf": "center",
+  "alignItems": "left",
+  "textAlign": "left"
+};
+
+const questionsStyle = {
+  'position': 'relative',
+  'display': 'flex',
+  "flexDirection": "column",
+  'alignItems': 'left',
+  'width': '60vw',
+  "alignSelf": "center",
+  "textAlign": "left"
 };

@@ -83,9 +83,9 @@ function Questions ({productID}) {
   return (
     <div>
       <h2 style={h2}>{'Questions & Answers'}</h2>
-      <Stars/>
-      <Search/>
-      <List/>
+      {/* <Stars/> */}
+      <Search />
+      <List />
       <Buttons product={productNumber}/>
     </div>
   )
@@ -96,9 +96,9 @@ export default Questions;
 
 
 const h2 = {
-  //"marginLeft": "40vw",
   'position': 'relative',
-  'display': 'inlineBlock',
+  'display': 'flex',
   'textAlign': 'center',
-  //'width': '100%',
+  "flexDirection": "column"
+
 };

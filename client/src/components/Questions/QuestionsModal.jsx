@@ -78,8 +78,8 @@ function QuestionsModal({ closeModal, productID }) {
     <div style={modalBackground} className="modalBackground">
       <div style={modalContainer} className="modalContainer">
         <form onSubmit={questionSubmitHandler}>
-          <h2>Ask Your Question</h2>
-          <h3>About the {product.name}</h3>
+          <h2 style={headers}>Ask Your Question</h2>
+          <h3 style={headers}>About the {product.name}</h3>
 
           <div style={formDiv} className="answer">
             <label>Your Question* </label>
@@ -160,6 +160,14 @@ export default QuestionsModal;
 
 const error = {
   "color": "red",
+  'fontSize': '12px'
+}
+
+const headers = {
+  "maxWidth": "500px",
+  "right": "0",
+  "postition": "absolute",
+  "textAlign": "center",
 }
 
 const modalBackground = {
@@ -177,8 +185,8 @@ const modalContainer = {
   "border": "2px solid black",
   "width": "auto",
   "height": "auto",
-  "left": "30vw",
-  "top": "25vh",
+   "left": "30vw",
+  "top": "30vh",
   "borderRadius": "12px",
   "backgroundColor": "white",
   "boxShadow": "grey",
@@ -192,13 +200,13 @@ const modalContainer = {
 
 const formDiv = {
   "display": "inlineBlock",
-  "width": "500px",
+  "maxWidth": "500px",
   "textAlign": "right",
   "marginRight": "100px"
 }
 
 const textBox = {
-  "width": "300px",
+  "maxWidth": "300px",
   "height": "25px",
   "margin": "10px",
   "right": "0",
@@ -216,7 +224,7 @@ const footer = {
 }
 
 const button = {
-  "width": "100px",
+  "maxWidth": "100px",
   "height": "25px",
   "margin": "10px",
   "border": "none",
