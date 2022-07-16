@@ -46,7 +46,11 @@ function Search() {
             questions.forEach((item) => {
               if (item.question_id == Number(key)) {
                 if(matchingQuestions.includes(item) !== true) {
-                  matchingQuestions.push(item);
+                  let questionCopy = Object.assign({}, item);
+                  questionCopy.answers = {};
+                  console.log(questionCopy);
+                  matchingQuestions.push(questionCopy); // Pushes entire question object still
+                  // Think it sends correct but reducers change it to normal
                 }
               }
             })
@@ -84,21 +88,25 @@ export default Search;
 
 // CSS styling to make things easier to look at
 const formStyle = {
+  "marginLeft": "15vw",
   'position': 'relative',
-  'display': 'block',
+  'display': 'inlineBlock',
   'alignItems': 'center',
   'width': '100%',
+
 };
 
 const inputStyle = {
   'position': 'relative',
   'display': 'flex',
   'alignItems': 'center',
-  'width': '325px',
+  'width': '60vw',
+  "alignSelf": "center",
+  "height": "40px"
 };
 
 const icon = {
-  'position': 'absolute',
-  'left': '312px',
-  'top': '3px',
+  'position': 'relative',
+  'left': '58vw',
+  'cursor': 'pointer'
 }

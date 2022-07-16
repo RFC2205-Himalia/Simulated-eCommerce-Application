@@ -28,5 +28,5 @@ export default List;
 const scrollable =
 {
   'overflow': 'scroll',
-  'maxHeight': '500px',
+  'maxHeight': '500px'
 };

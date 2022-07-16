@@ -3,19 +3,19 @@ import axios from "axios";
 
 import List from "./List.jsx";
 import Sort from "./Sort.jsx";
-import Stars from "./stars.jsx";
+// import AnswersModal from "./AnswersModal.jsx";
 import Search from "./Search.jsx";
 import Buttons from "./Buttons.jsx";
 
 
 import { useDispatch, useSelector } from "react-redux";
-import { questionList, sorted, addRender, answerRender, answersUnchange, questionsUnchange} from "../../Features/questions.js";
+import { questionList, sorted, addRender, answerRender, answersUnchange } from "../../Features/questions.js";
 import { useEffect } from "react";
 
 function Questions () {
 
   // Hardcoded value for now, replace later with dynamic from URL
-  var productNumber = 66644;
+  var productNumber = 66645;
   // Variables to pass on current product id
   var productReq = `questions?product_id=${productNumber}`
 
@@ -29,6 +29,7 @@ function Questions () {
   useEffect(() => {
     getRequests(productReq)
   }, []);
+
   // Updates both sorted answers and question renderlist when questions are populated
   useEffect(() => {
     let size = questions.length;
@@ -72,13 +73,15 @@ function Questions () {
     dispatch(answerRender(loadList));
   }
 
+
+
   return (
     <div>
       <h2>{'Questions & Answers'}</h2>
-      <Stars/>
+      {/* <Stars/> */}
       <Search/>
       <List/>
-      <Buttons/>
+      <Buttons product={productNumber}/>
     </div>
   )
 }

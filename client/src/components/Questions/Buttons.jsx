@@ -1,9 +1,9 @@
-import React from "react";
-import Modal from "./Modal.jsx";
+import React, {useState} from "react";
+import QuestionsModal from "./QuestionsModal.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { addRender, incrementCount, resetCount } from "../../Features/questions.js";
 
-function Buttons() {
+function Buttons(props) {
 
   const dispatch = useDispatch();
   const counter = useSelector(state => state.questions.count);
@@ -14,26 +14,22 @@ function Buttons() {
 
   // Render 2 more questions
   const moreHandler = () => {
-    console.log('More Answers Clicked');
     async function increment() {
       await dispatch(incrementCount())
     }
-    increment().then(dispatch(addRender(questions.slice(0, counter + 2)))); // It seems to update count before it dispatches addRender but is always behind
-    console.log('done');
+    increment().then(dispatch(addRender(questions.slice(0, counter + 2))));
   }
   // Collaspe question list down to default amount
   const collapseHandler = () => {
     dispatch(resetCount());
     dispatch(addRender(questions.slice(0, 4)))
   }
-
-  // pop out form to fill out to add question
-  const addQuestionHandler = () => {
-    // Send POST request with appropriate info attached
-    //  /qa/questions/:question_id/answers
-    //body, name, email, photos=[]
-    console.log(`Add An Answer Clicked`);
+  // Track boolean to show "Question" Modal
+  const [questionModal, setQuestionModal] = useState(false);
+  const updateQuestionModal = () => {
+    setQuestionModal(current => !current)
   }
+
 
 
   return (
@@ -42,7 +38,8 @@ function Buttons() {
         <button title="More" onClick={moreHandler} type='button'>MORE ANSWERED QUESTIONS</button> : null}
       {rendered.length > 4 && rendered.length <= questions.length ?
         <button title="More" onClick={collapseHandler} type='button'>COLLAPSE QUESTIONS</button> : null}
-      <button title="Add" onClick={addQuestionHandler} type='button'>ADD A QUESTION + </button>
+      <button title="Add" onClick={() => updateQuestionModal()} type='button'>ADD A QUESTION + </button>
+      {questionModal ? <QuestionsModal productID={props.product} closeModal={updateQuestionModal}/> : null}
     </div>
   )
 }

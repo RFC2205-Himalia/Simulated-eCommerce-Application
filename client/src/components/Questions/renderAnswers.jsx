@@ -33,10 +33,9 @@ function Answers(props) {
   let initialLength = answersInitial[id].length;
   let totalLength = answersSorted[id].length;
 
-
   return (
     <ul style={scrollable}>
-      {answersInitial[id] ? answersInitial[id].map((answer) => {
+      {initialLength > 0 ? answersInitial[id].map((answer) => {
         return <li style={{ 'listStyle': 'none', 'fontSize': '18px'}} key={answer.id}><b>A: </b>{answer.body}
         <br></br>
           <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
@@ -47,6 +46,7 @@ function Answers(props) {
       {totalLength > 2 && initialLength < totalLength ? <span id={id} onClick={(e) => answerHandler(e)} style={underlineStyle}>Show All Answers</span> : null}
       {initialLength === totalLength && totalLength > 2 ? <span id={id} onClick={(e) => answerCollapseHandler(e)} style={underlineStyle}>Collapse All Answers</span> : null}
     </ul>
+
 
   )
 }
@@ -59,7 +59,8 @@ export default Answers;
 const underlineStyle = {
   'fontSize': '14px',
   'color': '#5c5c5c',
-  'textDecoration': 'underline'
+  'textDecoration': 'underline',
+  'cursor': 'pointer'
 };
 const intitialStyle = {
   'fontSize': '14px',

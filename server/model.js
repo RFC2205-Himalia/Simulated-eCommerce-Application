@@ -25,8 +25,8 @@ const getProductData = (urlTail) => {
   return axios.get(options.url, options.headers);
 }
 
-const postProductData = (urlTail,data) => {
-  console.log(data);
+const postProductData = (urlTail, data) => {
+  console.log(urlTail);
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc${urlTail}`,
     headers: {
