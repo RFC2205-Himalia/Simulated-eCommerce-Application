@@ -16,20 +16,24 @@ Only one style can be selected at a time. A style must be selected at all times.
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import StyleThumbnails from './StyleThumbnails.jsx'
+import StyleThumbnail from './StyleThumbnail.jsx'
+import { StyledStyleGrid, CurrentStyleText } from './StyleSelector.style.js'
+
 
 function StyleSelector () {
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  console.log('Style\'s List', styleList)
+  // console.log('Style\'s List', styleList)
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  console.log('Current Style', currentStyle)
+  // console.log('Current Style', currentStyle)
 
   return (styleList ? (
     <div>
-      <div><b>Selected Style > </b> {styleList[currentStyle].name}</div>
-      {styleList.map((style, index) => {
-        return <StyleThumbnails key={'StyleThumbnail-' + index} style={style}/>
-      })}
+      <CurrentStyleText><b>Selected Style {">"} </b> {styleList[currentStyle].name}</CurrentStyleText>
+      <StyledStyleGrid>
+        {styleList.map((style, index) => {
+          return <StyleThumbnail key={'StyleThumbnail-' + index} style={style} styleNumber={index}/>
+        })}
+      </StyledStyleGrid>
     </div>
   ) : <div>Styles are not loaded yet</div>)
 

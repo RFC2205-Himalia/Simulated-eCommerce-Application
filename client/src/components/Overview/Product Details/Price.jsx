@@ -37,8 +37,8 @@ if (!salePrice) {
 } else if (salePrice) {
   return (
     <div>
-      <p><s>{originalPrice}</s></p>
-      <font color="red">{salePrice}</font>
+      <span><s>{originalPrice}</s></span>
+      <span style={{color: "red"}}> {salePrice}</span>
     </div>
   )
 }
