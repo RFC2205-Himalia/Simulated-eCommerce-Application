@@ -12,10 +12,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { questionList, sorted, addRender, answerRender, answersUnchange } from "../../Features/questions.js";
 import { useEffect } from "react";
 
-function Questions () {
+function Questions ({productID}) {
 
   // Hardcoded value for now, replace later with dynamic from URL
-  var productNumber = 66645;
+  var productNumber = Number(productID);
   // Variables to pass on current product id
   var productReq = `questions?product_id=${productNumber}`
 
@@ -24,11 +24,16 @@ function Questions () {
   const questions = useSelector(state => state.questions.questions);
   const sortedAnswers = useSelector(state => state.questions.sortedAnswers);
   const renderList = useSelector(state => state.questions.renderList);
+  const refresh = useSelector(state => state.questions.rerender)
 
   // componentDidMount replacement
   useEffect(() => {
     getRequests(productReq)
   }, []);
+
+  useEffect(() => {
+    getRequests(productReq)
+  }, [refresh]);
 
   // Updates both sorted answers and question renderlist when questions are populated
   useEffect(() => {
@@ -77,7 +82,7 @@ function Questions () {
 
   return (
     <div>
-      <h2>{'Questions & Answers'}</h2>
+      <h2 style={h2}>{'Questions & Answers'}</h2>
       {/* <Stars/> */}
       <Search/>
       <List/>
@@ -89,3 +94,11 @@ function Questions () {
 export default Questions;
 
 
+
+const h2 = {
+  //"marginLeft": "40vw",
+  'position': 'relative',
+  'display': 'inlineBlock',
+  'textAlign': 'center',
+  //'width': '100%',
+};

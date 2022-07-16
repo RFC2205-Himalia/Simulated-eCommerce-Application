@@ -48,7 +48,6 @@ function Search() {
                 if(matchingQuestions.includes(item) !== true) {
                   let questionCopy = Object.assign({}, item);
                   questionCopy.answers = {};
-                  console.log(questionCopy);
                   matchingQuestions.push(questionCopy); // Pushes entire question object still
                   // Think it sends correct but reducers change it to normal
                 }
@@ -88,12 +87,15 @@ export default Search;
 
 // CSS styling to make things easier to look at
 const formStyle = {
-  "marginLeft": "15vw",
-  'position': 'relative',
-  'display': 'inlineBlock',
-  'alignItems': 'center',
-  'width': '100%',
-
+  //"margin": "auto",
+  "display": "block",
+  "marginLeft": "auto",
+  "marginRight": "auto",
+  "width": "60%",
+  // 'position': 'relative',
+  // 'display': 'inlineBlock',
+  // 'selfAlign': 'center',
+  // 'width': '50%',
 };
 
 const inputStyle = {

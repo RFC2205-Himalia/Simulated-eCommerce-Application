@@ -10,8 +10,12 @@ export const questionData = createSlice({
     searching: false,
     renderList: [],
     renderAnswers: [],
+    rerender: false,
   },
   reducers: {
+    refresh: (state) => {
+      state.rerender = !state.rerender
+    },
     questionList: (state, action) => {
       state.questions = action.payload;
     },
@@ -42,6 +46,6 @@ export const questionData = createSlice({
   }
 })
 
-export const {questionList, sorted, addRender, incrementCount, resetCount, renderAnswers, answerRender, reportedTracker, answersUnchange, questionsUnchange, searchingRender} = questionData.actions
+export const {questionList, sorted, addRender, incrementCount, resetCount, renderAnswers, answerRender, reportedTracker, answersUnchange, questionsUnchange, searchingRender, refresh} = questionData.actions
 
 export default questionData.reducer;
