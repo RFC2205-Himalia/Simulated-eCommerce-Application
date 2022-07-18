@@ -3,6 +3,7 @@ import axios from 'axios';
 import ProductDetails from './Product Details/ProductDetails.jsx'
 import StyleSelector from './Style Selector/StyleSelector.jsx'
 import AddCart from './Add Cart/AddCart.jsx'
+import DefaultView from './Image Gallery/DefaultView.jsx'
 
 import { useDispatch } from "react-redux";
 import { getStyles, setCurrentStyle } from '../../Features/Styles.js'
@@ -12,7 +13,12 @@ import { useEffect } from "react";
 
 function Overview () {
   const dispatch = useDispatch();
-  const product = '66644'
+  const product = '66658'
+  //66643 for nulls
+  //66644 for default clothing
+  //66656 for one size (and can check if number auto switches on style change, currently no)
+  //66658 for default shoes
+  //66686 for out of stock
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}/styles`)
     .then((success) => {
@@ -35,6 +41,7 @@ function Overview () {
       <ProductDetails data-testid="productDetails"/>
       <StyleSelector />
       <AddCart />
+      <DefaultView />
 
     </div>
     )
