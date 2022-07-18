@@ -30,9 +30,6 @@ function Buttons(props) {
     setQuestionModal(current => !current)
   }
 
-  console.log('rendered: ', rendered.letgth);
-  console.log('questions: ', questions.length)
-
   return (
     <div style={buttons}>
       {rendered.length > 0 && rendered.length < questions.length && searching === false ?
@@ -41,7 +38,7 @@ function Buttons(props) {
           title="More"
           onClick={moreHandler}
           type='button'
-          style={{'fontWeight': "bold", "maxWidth": "250px", "maxHeight": "50px", "margin": "10px"}}
+          style={{'fontWeight': "bold", "maxWidth": "250px", "maxHeight": "75px", "margin": "10px", backgroundColor: "white"}}
           >
             MORE ANSWERED QUESTIONS
         </button> : null}
@@ -50,7 +47,7 @@ function Buttons(props) {
           title="More"
           onClick={collapseHandler}
           type='button'
-          style={{'fontWeight': "bold", "maxWidth": "250px", "maxHeight": "50px", "margin": "10px"}}
+          style={{'fontWeight': "bold", "maxWidth": "250px", "maxHeight": "75px", "margin": "10px", backgroundColor: "white"}}
           >
             COLLAPSE QUESTIONS
         </button> : null}
@@ -59,7 +56,7 @@ function Buttons(props) {
         title="Add"
         onClick={updateQuestionModal}
         type='button'
-        style={{'fontWeight': "bold", "maxWidth": "150px", "margin": "10px"}}
+        style={{'fontWeight': "bold", "maxWidth": "150px", "margin": "10px", "maxHeight": "75px", backgroundColor: "white"}}
         >
           ADD A QUESTION +
         </button>
@@ -77,12 +74,10 @@ function Buttons(props) {
 export default Buttons;
 
 const buttons = {
-  "display": "flex",
-  "position": "relative",
-  "justifyContent": "center",
-  "alignContent": "center",
-  "width": "100%",
-  "height": "50px",
-
+  display: "flex",
+  justifyContent: "center",
+  width: "100%",
+  height: "50px",
+  flexDirection: "row"
 }
 

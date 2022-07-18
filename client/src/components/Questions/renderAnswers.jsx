@@ -39,12 +39,13 @@ function Answers(props) {
         return (
           <div style={answersStyle} key={answer.id}><b>A: </b>{answer.body}
             <br></br>
-            <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}</span>&nbsp;
-            <Helpful className="answerHelp"
+            <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}&nbsp;|&nbsp;
+            <Helpful
               data={answer}
               title={id}
               reported={false}
             />
+            </span>
           </div>
         )
       }) : "No answers to question"}
@@ -77,29 +78,33 @@ export default Answers;
 
 //CSS styling
 const answerClickable = {
-  'fontSize': '12px',
-  'color': '#5c5c5c',
-  'cursor': 'pointer',
-  'fontWeight': 'bold'
+  fontSize: '12px',
+  color: '#5c5c5c',
+  cursor: 'pointer',
+  fontWeight: 'bold',
+  paddingLeft: '22px'
 }
 
 const intitialStyle = {
-  'fontSize': '14px',
-  'color': '#5c5c5c',
-  'paddingLeft': '22px'
+  fontSize: '14px',
+  color: '#5c5c5c',
+  paddingLeft: '22px',
+  display: "flex",
+  flexDirection: "row",
+  marginTop: "12px",
+  marginBottom: "12px"
 };
 // const scrollable =
 // {
-//   'overflow': 'scroll',
-//   'maxHeight': '200px',
+//   overflow: 'scroll',
+//   maxHeight: '200px',
 // };
 
 const answersStyle = {
-  'position': 'relative',
-  'display': 'flex',
-  "flexDirection": "column",
-  'alignItems': 'left',
-  'width': '55vw',
-  "alignSelf": "center",
-  "textAlign": "left"
+  // display: 'flex',
+  // flexDirection: "column",
+  alignItems: 'left',
+  width: '55vw',
+  alignSelf: "center",
+  textAlign: "left"
 };

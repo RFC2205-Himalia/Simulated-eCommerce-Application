@@ -14,14 +14,17 @@ function List() {
         return (
           <div  style={questionsStyle} key={`${question.question_id}`}>
             <br></br>
-            <span
-              style={{ 'fontSize': '20px'}}>
+            <div
+              style={{ 'fontSize': '18px', maxWidth: "270px"}}>
               <b>Q: {question.question_body}</b>
-            </span>
+            </div>
+            <div style={questionHelp}>
             <Helpful
+              className = "listHelpful"
               title={question.question_id}
               data={question}
             />
+            </div>
             {Object.keys(renderAnswers).length > 0 ? <Answers question={question} /> : null}
           </div>
         )
@@ -35,24 +38,30 @@ export default List;
 // CSS styling
 const scrollable =
 {
-  "marginTop": "10px",
-  "position": "absolute",
-  'overflow': 'scroll',
-  'maxHeight': '50vh',
-  "display": "flex",
-  "flexDirection": "column",
-  "width": "95%",
-  "alignSelf": "center",
-  "alignItems": "left",
-  "textAlign": "left"
+  marginTop: "10px",
+  position: "relative",
+  overflow: 'scroll',
+  maxHeight: '50vh',
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  alignSelf: "center",
+  alignItems: "left",
+  textAlign: "left",
+  left: "0.5vw"
 };
 
 const questionsStyle = {
-  'position': 'relative',
-  'display': 'flex',
-  "flexDirection": "column",
-  'alignItems': 'left',
-  'width': '60vw',
-  "alignSelf": "center",
-  "textAlign": "left"
+  display: 'flex',
+  flexDirection: "column",
+  alignItems: 'left',
+  width: '60vw',
+  alignSelf: "center",
+  textAlign: "left"
 };
+
+const questionHelp = {
+  textAlign: "right",
+  width: "60vw",
+  marginBottom: "10px"
+}

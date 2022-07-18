@@ -73,13 +73,10 @@ function Helpful(props) {
   }
 
   return (
-    <div>
+    <div style={helpfulContainer}>
       <span style={userStyle}>
         Helpful?
-      </span>&nbsp;
-      <span style={userStyle}>
-        |
-      </span>&nbsp;
+      </span>&nbsp;&nbsp;
       <span
         style={underlineStyle}
         title="Yes"
@@ -89,7 +86,7 @@ function Helpful(props) {
       </span>&nbsp;
       <span
         style={userStyle}>
-        {wasClicked ? helped : helpCount})
+        ({wasClicked ? helped : helpCount})
       </span>&nbsp;
       <span
         style={userStyle}> | </span>&nbsp;
@@ -101,7 +98,7 @@ function Helpful(props) {
       </span>&nbsp;
       {type === 'question' ?
         <span>
-          <span style={userStyle}>|</span>&nbsp;
+          <span style={userStyle}> | </span>&nbsp;
           <span
             style={underlineStyle}
             id={id}
@@ -123,13 +120,21 @@ export default Helpful;
 // Styling for component
 
 const underlineStyle = {
-  'fontSize': '14px',
-  'color': '#5c5c5c',
-  'textDecoration': 'underline',
-  'cursor': 'pointer',
-  //"alignItems": "right"
+  //position: "relative",
+  fontSize: '14px',
+  color: '#5c5c5c',
+  textDecoration: 'underline',
+  cursor: 'pointer',
 };
 const userStyle = {
-  'fontSize': '14px',
-  'color': '#5c5c5c',
+  //position: "relative",
+  fontSize: '14px',
+  color: '#5c5c5c',
 };
+
+const helpfulContainer = {
+  //maxWidth: "271px",
+  //display: "contents",
+  //flexDirection: "row"
+  //position: "relative"
+}

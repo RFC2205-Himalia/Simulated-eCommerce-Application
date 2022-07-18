@@ -81,8 +81,8 @@ function Questions ({productID}) {
 
 
   return (
-    <div>
-      <h2 style={h2}>{'Questions & Answers'}</h2>
+    <div className="questionsWrapper" style={wrapper} >
+      <p style={h2}>{'QUESTIONS & ANSWERS'}</p>
       {/* <Stars/> */}
       <Search />
       <List />
@@ -96,9 +96,14 @@ export default Questions;
 
 
 const h2 = {
-  'position': 'relative',
-  'display': 'flex',
-  'textAlign': 'center',
-  "flexDirection": "column"
-
+  position: 'relative',
+  display: 'flex',
+  textAlign: 'left',
+  left: '20vw',
+  flexDirection: "column",
+  fontWeight: "100"
 };
+
+const wrapper = {
+  width: "100vw"
+}

@@ -15,7 +15,6 @@ function Search() {
 
   // Generic change handler
   const changeHandler = (e) => {
-    console.log(e.target.value);
     textInput = e.target.value;
     queryHandler(textInput);
   }
@@ -62,7 +61,6 @@ function Search() {
       dispatch(addRender(matchingQuestions));
       dispatch(answerRender(matchingAnswers));
     } else {
-      console.log('else');
       dispatch(searchingRender(false));
       dispatch(addRender((questions).slice(0, 4)));
     }
@@ -86,33 +84,28 @@ export default Search;
 
 // CSS styling to make things easier to look at
 const formStyle = {
-  //"margin": "auto",
-  "display": "flex",
-  "flexDirection": "column",
-  // "display": "block",
-  "marginLeft": "auto",
-  "marginRight": "auto",
-  "width": "100%",
-  'position': 'relative',
-  "alignItems": "center"
-  // 'display': 'inlineBlock',
-  // 'selfAlign': 'center',
-  // 'width': '50%',
+  display: "flex",
+  flexDirection: "column",
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "100%",
+  position: 'relative',
+  alignItems: "center",
 };
 
 const inputStyle = {
-  'position': 'relative',
-  'display': 'flex',
-  'alignItems': 'center',
-  'width': '60vw',
-  "alignSelf": "center",
-  "height": "40px"
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  width: '60vw',
+  alignSelf: "center",
+  height: "40px"
 };
 
 const icon = {
-  'position': 'absolute',
-  'right': '20vw',
-  'cursor': 'pointer',
-  "top": "30%",
-  "backgrounColor": "white"
+  position: 'absolute',
+  right: '21vw',
+  cursor: 'pointer',
+  top: "30%",
+  backgrounColor: "white"
 }

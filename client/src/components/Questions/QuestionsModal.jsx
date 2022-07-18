@@ -159,76 +159,77 @@ export default QuestionsModal;
 //CSS Stuff.... Probably change later to styled-components
 
 const error = {
-  "color": "red",
-  'fontSize': '12px'
+  color: "red",
+  fontSize: '12px'
 }
 
 const headers = {
-  "maxWidth": "500px",
-  "right": "0",
-  "postition": "absolute",
-  "textAlign": "center",
+  maxWidth: "500px",
+  right: "0",
+  postition: "absolute",
+  textAlign: "center",
 }
 
 const modalBackground = {
-
-  "width": "100vw",
-  "position": "absolute",
-  "height": "100vh",
-  "left": "0",
-  "top": "0",
-  "backgroundColor": "rgba(159,159,159,0.5)",
-  "overflow": "hidden",
+  width: "100vw",
+  position: "fixed",
+  height: "100vh",
+  left: "0",
+  top: "0",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "rgba(159,159,159,0.5)",
+  overflow: "hidden",
 }
 
 const modalContainer = {
-  "border": "2px solid black",
-  "width": "auto",
-  "height": "auto",
-   "left": "30vw",
-  "top": "30vh",
-  "borderRadius": "12px",
-  "backgroundColor": "white",
-  "boxShadow": "grey",
-  "display": "flex",
-  "flexDirection": "column",
-  "padding": "25px",
-  "position": "absolute",
-  "justifyContent": "center",
-  "alignItems": "center",
+  border: "2px solid black",
+  width: "auto",
+  height: "auto",
+  borderRadius: "12px",
+  backgroundColor: "white",
+  boxShadow: "grey",
+  display: "flex",
+  flexDirection: "column",
+  padding: "25px",
+  position: "absolute",
+  justifyContent: "center",
+  alignItems: "center",
 }
 
 const formDiv = {
-  "display": "inlineBlock",
-  "maxWidth": "500px",
-  "textAlign": "right",
-  "marginRight": "100px"
+  display: "inlineBlock",
+  maxWidth: "500px",
+  textAlign: "right",
+  marginRight: "50px"
 }
 
 const textBox = {
-  "maxWidth": "300px",
-  "height": "25px",
-  "margin": "10px",
-  "right": "0",
-  "postition": "absolute",
+  width: "20vw",
+  height: "25px",
+  //margin: "10px",
+  right: "0",
+  postition: "absolute",
 }
 const userStyle = {
-  'fontSize': '12px',
-  'color': '#5c5c5c',
-  "marginRight": "10px",
+  fontSize: '12px',
+  color: '#5c5c5c',
+  marginRight: "10px",
 };
+
 const footer = {
-  "display": "flex",
-  "justifyContent": "center",
-  "alignItems": "center",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 }
 
 const button = {
-  "maxWidth": "100px",
-  "height": "25px",
-  "margin": "10px",
-  "border": "none",
-  "borderRadius": "8px",
-  "fontSize": "16px",
-  "cursor": "pointer"
+  maxWidth: "100px",
+  height: "25px",
+  margin: "10px",
+  border: "none",
+  borderRadius: "8px",
+  fontSize: "16px",
+  cursor: "pointer"
 }
