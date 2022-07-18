@@ -11,11 +11,13 @@ import ReviewListElement from "./ReviewListElement.jsx";
 
 function ReviewList () {
     // console.log("Reviews: ", sampleData.results)
+    const reviews = useSelector((state) => state.addReviews.reviews);
+
 
     return (
         <ReviewListWrapper>
             {
-                sampleData.results.map((element) => {
+                reviews.map((element) => {
                     return <ReviewListElement key={element.review_id} review = {element}/>
                 })
             }
