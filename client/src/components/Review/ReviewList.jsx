@@ -9,10 +9,8 @@ import styled from "styled-components";
 import ReviewListElement from "./ReviewListElement.jsx";
 
 
-function ReviewList () {
+function ReviewList ({reviews}) {
     // console.log("Reviews: ", sampleData.results)
-    const reviews = useSelector((state) => state.addReviews.reviews);
-
 
     return (
         <ReviewListWrapper>

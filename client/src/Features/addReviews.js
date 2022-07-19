@@ -15,7 +15,7 @@ export const addReviewsSlice = createSlice({
       state.product = action.payload.product || state.product;
       state.page = action.payload.page || state.page;
       state.count = action.payload.count || state.count;
-      console.log(state);
+      // console.log(state);
     },
     addAvgScore: (state, action) => {
       state.avgReviewScore = action.payload;

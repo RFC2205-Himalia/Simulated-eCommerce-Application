@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 
 function AverageReviewScore ({AverageScore}) {
-
     
     return (
         <AvgReviewScore>
