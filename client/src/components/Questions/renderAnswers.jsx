@@ -42,8 +42,9 @@ function Answers(props) {
     setModal({
       [id]: !modal[id]
     })
+    console.log('updated' , modal[id])
   }
-  let showPhoto = modal[id];
+
   // onClick={(e) => updateQuestionModal(e)}
 
   return (
@@ -58,7 +59,8 @@ function Answers(props) {
               answer.photos.map((photo) => {
                 return (
                   <div key={photo}>
-                    <img src={photo} height="100" style={photos} ></img>
+                    <img id={photo} src={photo} height="100" style={photos} onClick = {(e) => updateModal(e.target.id)} ></img>
+                    {modal[photo] ? <PhotoModal closeModal={updateModal} photoURL={photo} /> : null}
                   </div>
                   )
                 })
