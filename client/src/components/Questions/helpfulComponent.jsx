@@ -88,14 +88,16 @@ function Helpful(props) {
         style={userStyle}>
         ({wasClicked ? helped : helpCount})
       </span>&nbsp;
+      {type === 'answer' ?
       <span
-        style={userStyle}> | </span>&nbsp;
+        style={userStyle}> | </span>: null}
+      {type === 'answer' ?
       <span
         style={underlineStyle}
         id={id}
         onClick={!isReported ? (e) => { reportHandler(type, e); updateReport(e) } : null}>
         {isReported ? 'Reported' : 'Report'}
-      </span>&nbsp;
+      </span> : null}
       {type === 'question' ?
         <span>
           <span style={userStyle}> | </span>&nbsp;
@@ -122,14 +124,14 @@ export default Helpful;
 const underlineStyle = {
   //position: "relative",
   fontSize: '12px',
-  color: '#b0b0b09b',
+  color: '#6966669b',
   textDecoration: 'underline',
   cursor: 'pointer',
 };
 const userStyle = {
   //position: "relative",
   fontSize: '12px',
-  color: '#b0b0b09b',
+  color: '#6966669b',
 };
 
 const helpfulContainer = {

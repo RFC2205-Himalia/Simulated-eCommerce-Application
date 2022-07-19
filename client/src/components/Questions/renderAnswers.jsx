@@ -51,9 +51,7 @@ function Answers(props) {
     <div >
       {initialLength > 0 ? answersInitial[id].map((answer, index) => {
         return (
-          <div style={answerTitle} key={answer.id}> {index === 0 ? <b>A: </b> : null}
-          <span style={answersStyle}>{answer.body}</span>
-            <br></br>
+          <div style={answerTitle} key={answer.id}> {index === 0 ? <div><b>A: </b><span>{answer.body}</span></div> : <span style={answersStyle}>{answer.body}</span>}
             <div style={photosOuter}>
             {answer.photos.length > 0 ?
               answer.photos.map((photo) => {
@@ -115,7 +113,7 @@ const answerClickable = {
 
 const intitialStyle = {
   fontSize: '12px',
-  color: '#b0b0b09b',
+  color: '#6966669b',
   paddingLeft: '22px',
   display: "flex",
   flexDirection: "row",
@@ -139,7 +137,7 @@ const photosOuter = {
 const answersStyle = {
   alignItems: 'left',
   width: '46vw',
-  //alignSelf: "center",
+  paddingLeft: '22px',
   textAlign: "left",
   margin: "1px"
 

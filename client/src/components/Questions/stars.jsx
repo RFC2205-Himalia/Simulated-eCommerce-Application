@@ -15,29 +15,29 @@ function stars() {
         const activeStar = active;
         return (
           <div key={index+'outer'}>
-            <div ><IoMdStarOutline size={35}/></div>
+            <div ><IoMdStarOutline size={25}/></div>
           <div key={index} style={filledStars}>
             <div>
               <div>
-                {index + 1 <= Math.floor(activeStar) ? <IoMdStar size={35}/> : null}
+                {index + 1 <= Math.floor(activeStar) ? <IoMdStar size={25}/> : null}
               </div>
             </div>
             <div>
               {index + 0.1 <= activeStar && index + 0.3 >= activeStar ?
                 <div style={{ width: `${42}%`, overflow: "hidden", position: "relative" }}>
-                  <IoMdStar size={35}/>
+                  <IoMdStar size={25}/>
                 </div> : null}
             </div>
             <div>
               {index + 0.4 <= activeStar && index + 0.6 >= activeStar ?
                 <div style={{ width: `${50}%`, overflow: "hidden", position: "relative" }}>
-                  <IoMdStar size={35}/>
+                  <IoMdStar size={25}/>
                 </div> : null}
             </div>
             <div>
               {index + 0.7 <= activeStar && index + 1 > activeStar ?
                 <div style={{ width: `${55}%`, overflow: "hidden", position: "relative" }}>
-                  <IoMdStar size={35}/>
+                  <IoMdStar size={25}/>
                 </div> : null}
             </div>
           </div>
