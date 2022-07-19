@@ -138,13 +138,16 @@ function QuestionsModal({ closeModal, productID }) {
           <div style={footer} className="modalFooter">
             <button
               style={button}
+              element='Cancel Question Modal'
+              widget='Questions And Answers'
               onClick={() => closeModal()}> Cancel </button>
             <button
               style={button}
               type="submit"
+              element='Submit Question Modal'
+              widget='Questions And Answers'
               onSubmit={(e) => questionSubmitHandler(e)}> Submit </button>
           </div>
-
         </form>
       </div>
     </div>

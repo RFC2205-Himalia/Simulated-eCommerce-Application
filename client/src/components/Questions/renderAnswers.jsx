@@ -42,7 +42,6 @@ function Answers(props) {
     setModal({
       [id]: !modal[id]
     })
-    console.log('updated' , modal[id])
   }
 
   // onClick={(e) => updateQuestionModal(e)}
@@ -57,7 +56,10 @@ function Answers(props) {
               answer.photos.map((photo) => {
                 return (
                   <div key={photo}>
-                    <img id={photo} src={photo} height="100" style={photos} onClick = {(e) => updateModal(e.target.id)} ></img>
+                    <img id={photo} src={photo} height="100" style={photos}
+                    element='Thumbnail'
+                    widget='Questions And Answers'
+                    onClick = {(e) => updateModal(e.target.id)} ></img>
                     {modal[photo] ? <PhotoModal closeModal={updateModal} photoURL={photo} /> : null}
                   </div>
                   )
@@ -80,6 +82,8 @@ function Answers(props) {
         <span
           style={answerClickable}
           id={id}
+          element='Load More Answers'
+          widget='Questions And Answers'
           onClick={(e) => answerHandler(e)}
           >
             LOAD MORE ANSWERS
@@ -88,6 +92,8 @@ function Answers(props) {
         <span
           style={answerClickable}
           id={id}
+          element='Collapse Answers'
+          widget='Questions And Answers'
           onClick={(e) => answerCollapseHandler(e)}
           >
             COLLAPSE ANSWERS

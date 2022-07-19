@@ -72,7 +72,7 @@ function Search() {
       <form style={formStyle}>
         <div className='form'>
          <input style={inputStyle} type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...' onChange={(e) => changeHandler(e)}/>
-         <span className="icon" style={icon}><GoSearch onClick= {queryHandler}/></span>
+         <span className="icon" element='Search Icon' widget='Search.jsx' style={icon}><GoSearch onClick= {queryHandler}/></span>
         </div>
       </form>
   )

@@ -81,6 +81,8 @@ function Helpful(props) {
         style={underlineStyle}
         title="Yes"
         id={id}
+        element='Increase Helpful Count'
+        widget='Questions And Answers'
         onClick={!wasClicked ? (e) => { helpfulHandler(type, e); updateClick(e) } : null}>
         Yes
       </span>&nbsp;
@@ -95,6 +97,8 @@ function Helpful(props) {
       <span
         style={underlineStyle}
         id={id}
+        element='Report answer'
+        widget='Questions And Answers'
         onClick={!isReported ? (e) => { reportHandler(type, e); updateReport(e) } : null}>
         {isReported ? 'Reported' : 'Report'}
       </span> : null}
@@ -104,6 +108,8 @@ function Helpful(props) {
           <span
             style={underlineStyle}
             id={id}
+            element='Add answer'
+            widget='Questions And Answers'
             onClick={(e) => updateModal(e.target.id)}>
             Add Answer
           </span>
@@ -135,8 +141,6 @@ const userStyle = {
 };
 
 const helpfulContainer = {
-  //maxWidth: "271px",
-  //display: "contents",
-  //flexDirection: "row"
-  //position: "relative"
+  // position: "relative",
+  // top: "-2vh",
 }

@@ -6,6 +6,7 @@ import Similar from './components/Similar/Similar.jsx';
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { tracker } from "./Features/questions.js";
 import { addProduct } from "./Features/addProduct.js"
 
 
@@ -33,7 +34,11 @@ function App () {
   }, []);
 
     return (
-      <div>
+      <div onClick={(e) => dispatch(tracker({
+        element: e.target.getAttribute('element'),
+        widget: e.target.getAttribute('widget'),
+        time: `${new Date}`
+      }))}>
           <Overview/>
           <Questions productID={product}/>
           <Reviews/>

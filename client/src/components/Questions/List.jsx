@@ -61,6 +61,8 @@ const questionsStyle = {
 };
 
 const questionHelp = {
+  position: "relative",
+  top: "-2vh",
   textAlign: "right",
   width: "60vw",
   marginBottom: "10px"

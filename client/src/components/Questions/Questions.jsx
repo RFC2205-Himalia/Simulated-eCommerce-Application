@@ -3,7 +3,6 @@ import axios from "axios";
 
 import List from "./List.jsx";
 import Sort from "./Sort.jsx";
-import Stars from './stars.jsx';
 import Search from "./Search.jsx";
 import Buttons from "./Buttons.jsx";
 
@@ -80,10 +79,10 @@ function Questions ({productID}) {
 
 
 
+
   return (
     <div className="questionsWrapper" style={wrapper} >
       <p style={h2}>{'QUESTIONS & ANSWERS'}</p>
-      <Stars/>
       <Search />
       <List />
       <Buttons product={productNumber}/>

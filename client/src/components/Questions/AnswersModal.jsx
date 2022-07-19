@@ -144,15 +144,18 @@ function AnswersModal({ data, closeModal }) {
             style={textBox}
             type="file"
             placeholder="Example: photoAddress.com"
-            name="photos"
+            element='Add photo file upload'
+            widget='Questions And Answers'
             value={formValues.photos}
             onChange={(e) => {handlechange(e)}}
             />
           </div>
 
           <div style={footer} className="modalFooter">
-            <button style={button} onClick={(e) => closeModal(e)}> Cancel </button>
-            <button type="submit" style={button} onSubmit={(e) => answerSubmitHandler(e.target.id)}> Submit </button>
+            <button element='Cancel add answer Modal' widget='Questions And Answers' style={button} onClick={(e) => closeModal(e)}>
+              Cancel
+            </button>
+            <button element='Submit add answer Modal' widget='Questions And Answers' type="submit" style={button} onSubmit={(e) => answerSubmitHandler(e.target.id)}> Submit </button>
           </div>
           </form>
       </div>

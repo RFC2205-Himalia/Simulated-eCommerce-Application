@@ -7,7 +7,7 @@ function PhotoModal({ closeModal, photoURL }) {
   return (
     <div className="photoBackground" style={modalBackground}>
       <div className="photoContainer" style={modalContainer}>
-        <button style={button} onClick={() => closeModal(photoURL)}>X</button>
+        <button style={button} element='Close Button Photo Modal' widget='Questions And Answers' onClick={() => closeModal(photoURL)}>X</button>
         <img style={photo} src={photoURL} />
       </div>
     </div>
@@ -50,7 +50,7 @@ const modalContainer = {
 const photo = {
   maxWidth: "75vw",
   maxHeight: "75vh",
-  top: "0"
+  top: "0",
 }
 
 const button = {
@@ -63,5 +63,5 @@ const button = {
   cursor: "pointer",
   backgroundColor: "#fffefee1",
   border: "rgba(159,159,159,0.2)",
-  boxShadow: "1px 1px 2px gray"
+  boxShadow: "1px 1px 3px black"
 }

@@ -39,6 +39,8 @@ function Buttons(props) {
           onClick={moreHandler}
           type='button'
           style={indvButton}
+          element="More Answers Button"
+          widget='Questions And Answers'
           >
             MORE ANSWERED QUESTIONS
         </button> : null}
@@ -48,6 +50,8 @@ function Buttons(props) {
           onClick={collapseHandler}
           type='button'
           style={indvButton}
+          element="Collapse Answers Button"
+          widget='Questions And Answers'
           >
             COLLAPSE QUESTIONS
         </button> : null}
@@ -57,6 +61,8 @@ function Buttons(props) {
         onClick={updateQuestionModal}
         type='button'
         style={indvButton}
+        element="Add Question Button"
+        widget='Questions And Answers'
         >
           ADD A QUESTION +
         </button>
