@@ -107,5 +107,5 @@ const icon = {
   right: '21vw',
   cursor: 'pointer',
   top: "30%",
-  backgrounColor: "white"
+  textShadow: "2px 2px 5px gray"
 }

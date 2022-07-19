@@ -15,7 +15,7 @@ function List() {
           <div  style={questionsStyle} key={`${question.question_id}`}>
             <br></br>
             <div
-              style={{ 'fontSize': '18px', maxWidth: "270px"}}>
+              style={{ 'fontSize': '18px', maxWidth: "45vw"}}>
               <b>Q: {question.question_body}</b>
             </div>
             <div style={questionHelp}>

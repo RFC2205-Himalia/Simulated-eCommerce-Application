@@ -105,5 +105,6 @@ const h2 = {
 };
 
 const wrapper = {
-  width: "100vw"
+  width: "100vw",
+  //backgroundColor: "#ecf2f9"
 }

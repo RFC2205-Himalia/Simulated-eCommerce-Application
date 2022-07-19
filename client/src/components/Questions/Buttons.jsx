@@ -38,7 +38,7 @@ function Buttons(props) {
           title="More"
           onClick={moreHandler}
           type='button'
-          style={{'fontWeight': "bold", "maxWidth": "250px", "maxHeight": "75px", "margin": "10px", backgroundColor: "white"}}
+          style={indvButton}
           >
             MORE ANSWERED QUESTIONS
         </button> : null}
@@ -47,7 +47,7 @@ function Buttons(props) {
           title="More"
           onClick={collapseHandler}
           type='button'
-          style={{'fontWeight': "bold", "maxWidth": "250px", "maxHeight": "75px", "margin": "10px", backgroundColor: "white"}}
+          style={indvButton}
           >
             COLLAPSE QUESTIONS
         </button> : null}
@@ -56,7 +56,7 @@ function Buttons(props) {
         title="Add"
         onClick={updateQuestionModal}
         type='button'
-        style={{'fontWeight': "bold", "maxWidth": "150px", "margin": "10px", "maxHeight": "75px", backgroundColor: "white"}}
+        style={indvButton}
         >
           ADD A QUESTION +
         </button>
@@ -75,9 +75,22 @@ export default Buttons;
 
 const buttons = {
   display: "flex",
-  justifyContent: "center",
-  width: "100%",
-  height: "50px",
-  flexDirection: "row"
+  textAlign: "left",
+  left: "18vw",
+  width: "60vw",
+  height: "75px",
+  flexDirection: "row",
+  marginLeft: "20vw",
+  marginTop: "10px"
 }
 
+const indvButton = {
+  fontWeight: "bold",
+  maxWidth: "250px",
+  margin: "10px",
+  maxHeight: "75px",
+  backgroundColor: "white",
+  //border: "1px solid black",
+  padding: "10px",
+  boxShadow: "1px 1px 5px gray"
+}

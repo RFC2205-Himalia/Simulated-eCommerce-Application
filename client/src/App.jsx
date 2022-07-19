@@ -15,7 +15,7 @@ import { addProduct } from "./Features/addProduct.js"
 
 function App () {
   const dispatch = useDispatch();
-  var product = '66644'
+  var product = '66670'
 
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}`)

@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Helpful from './helpfulComponent.jsx';
 import { useDispatch, useSelector } from "react-redux";
 import { answerRender } from "../../Features/questions.js";
+import PhotoModal from "./PhotoModal.jsx";
 
 
 function Answers(props) {
   const dispatch = useDispatch();
   const answersSorted = useSelector(state => state.questions.sortedAnswers);
   const answersInitial = useSelector(state => state.questions.renderAnswers);
+
+
 
   // Converts date from string to appropriate format
   const convertDate = (date) => {
@@ -33,13 +36,36 @@ function Answers(props) {
   let initialLength = answersInitial[id].length;
   let totalLength = answersSorted[id].length;
 
+
+  const [modal, setModal] = useState({});
+  const updateModal = (id) => {
+    setModal({
+      [id]: !modal[id]
+    })
+  }
+  let showPhoto = modal[id];
+  // onClick={(e) => updateQuestionModal(e)}
+
   return (
     <div >
-      {initialLength > 0 ? answersInitial[id].map((answer) => {
+      {initialLength > 0 ? answersInitial[id].map((answer, index) => {
         return (
-          <div style={answersStyle} key={answer.id}><b>A: </b>{answer.body}
+          <div style={answerTitle} key={answer.id}> {index === 0 ? <b>A: </b> : null}
+          <span style={answersStyle}>{answer.body}</span>
             <br></br>
-            <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>{answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}&nbsp;|&nbsp;
+            <div style={photosOuter}>
+            {answer.photos.length > 0 ?
+              answer.photos.map((photo) => {
+                return (
+                  <div key={photo}>
+                    <img src={photo} height="100" style={photos} ></img>
+                  </div>
+                  )
+                })
+            : null}
+            </div>
+            <br></br>
+            <span style={intitialStyle}>by {answer.answerer_name === 'Seller' ? <b>&nbsp; {answer.answerer_name}</b> : answer.answerer_name}, {convertDate(answer.date)}&nbsp;|&nbsp;
             <Helpful
               data={answer}
               title={id}
@@ -86,25 +112,41 @@ const answerClickable = {
 }
 
 const intitialStyle = {
-  fontSize: '14px',
-  color: '#5c5c5c',
+  fontSize: '12px',
+  color: '#b0b0b09b',
   paddingLeft: '22px',
   display: "flex",
   flexDirection: "row",
-  marginTop: "12px",
-  marginBottom: "12px"
+  //marginTop: "8px",
+  marginBottom: "15px"
 };
-// const scrollable =
-// {
-//   overflow: 'scroll',
-//   maxHeight: '200px',
-// };
+
+const photos = {
+  marginTop: "15px",
+  marginRight: "10px",
+  border: "1px solid black",
+  boxShadow: "1px 1px 5px black"
+};
+
+const photosOuter = {
+  paddingLeft: '22px',
+  display: "flex",
+  flexDirection: "row"
+}
 
 const answersStyle = {
-  // display: 'flex',
-  // flexDirection: "column",
   alignItems: 'left',
-  width: '55vw',
-  alignSelf: "center",
-  textAlign: "left"
+  width: '46vw',
+  //alignSelf: "center",
+  textAlign: "left",
+  margin: "1px"
+
 };
+
+const answerTitle = {
+  alignItems: 'left',
+  width: '45vw',
+  margin: "1px",
+  //alignSelf: "center",
+  textAlign: "left"
+}

@@ -10,7 +10,7 @@ function AnswersModal({ data, closeModal }) {
   const dispatch = useDispatch();
   const product = useSelector(state => state.addProduct.products);
 
-  const formDefault = {answer: "", name: "", email: ""};
+  const formDefault = {answer: "", name: "", email: "", photos: ""};
   const [formValues, setFormValues] = useState(formDefault);
   const [formErrors, setFormErrors] = useState({});
   const [canSubmit, setCanSubmit] = useState(false);
@@ -22,7 +22,8 @@ function AnswersModal({ data, closeModal }) {
       let body = {
         "body": `${formValues.answer}`,
         "name": `${formValues.name}`,
-        "email": `${formValues.email}`
+        "email": `${formValues.email}`,
+        //"photos": `${formValues.photos}`
       }
       postRequests(id, body)
       closeModal(id);
@@ -51,6 +52,7 @@ function AnswersModal({ data, closeModal }) {
   const handlechange = (e) => {
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value})
+    console.log(formValues.photos)
   }
 
   // Validation checks
@@ -136,6 +138,18 @@ function AnswersModal({ data, closeModal }) {
           }
           </div>
 
+          <div style={formDiv} className="file">
+            <label >Photo(s) </label>
+            <input
+            style={textBox}
+            type="file"
+            placeholder="Example: photoAddress.com"
+            name="photos"
+            value={formValues.photos}
+            onChange={(e) => {handlechange(e)}}
+            />
+          </div>
+
           <div style={footer} className="modalFooter">
             <button style={button} onClick={(e) => closeModal(e)}> Cancel </button>
             <button type="submit" style={button} onSubmit={(e) => answerSubmitHandler(e.target.id)}> Submit </button>
@@ -199,16 +213,16 @@ const formDiv = {
   display: "inlineBlock",
   maxWidth: "500px",
   textAlign: "right",
-  marginRight: "50px"
+  marginRight: "100px"
 }
 
 const textBox = {
   width: "20vw",
   height: "25px",
-  //margin: "10px",
   right: "0",
   postition: "absolute",
 }
+
 const userStyle = {
   fontSize: '12px',
   color: '#5c5c5c',
@@ -228,5 +242,6 @@ const button = {
   border: "none",
   borderRadius: "8px",
   fontSize: "16px",
-  cursor: "pointer"
+  cursor: "pointer",
+  boxShadow: "2px 2px 5px gray"
 }

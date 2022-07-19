@@ -121,15 +121,15 @@ export default Helpful;
 
 const underlineStyle = {
   //position: "relative",
-  fontSize: '14px',
-  color: '#5c5c5c',
+  fontSize: '12px',
+  color: '#b0b0b09b',
   textDecoration: 'underline',
   cursor: 'pointer',
 };
 const userStyle = {
   //position: "relative",
-  fontSize: '14px',
-  color: '#5c5c5c',
+  fontSize: '12px',
+  color: '#b0b0b09b',
 };
 
 const helpfulContainer = {

@@ -208,10 +208,10 @@ const formDiv = {
 const textBox = {
   width: "20vw",
   height: "25px",
-  //margin: "10px",
   right: "0",
   postition: "absolute",
 }
+
 const userStyle = {
   fontSize: '12px',
   color: '#5c5c5c',
@@ -231,5 +231,6 @@ const button = {
   border: "none",
   borderRadius: "8px",
   fontSize: "16px",
-  cursor: "pointer"
+  cursor: "pointer",
+  boxShadow: "2px 2px 5px gray"
 }
