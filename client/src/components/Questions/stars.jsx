@@ -36,7 +36,7 @@ function stars() {
             </div>
             <div>
               {index + 0.7 <= activeStar && index + 1 > activeStar ?
-                <div style={{ width: `${55}%`, overflow: "hidden", position: "relative" }}>
+                <div style={{ width: `${58}%`, overflow: "hidden", position: "relative" }}>
                   <IoMdStar size={25}/>
                 </div> : null}
             </div>
