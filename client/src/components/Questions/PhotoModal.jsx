@@ -36,7 +36,7 @@ const modalBackground = {
 
 const modalContainer = {
   border: "2px solid black",
-  height: "85vh",
+  height: "75vh",
   borderRadius: "2px",
   display: "flex",
   flexDirection: "column",
@@ -48,8 +48,8 @@ const modalContainer = {
 }
 
 const photo = {
-  maxWidth: "85vw",
-  maxHeight: "85vh",
+  maxWidth: "75vw",
+  maxHeight: "75vh",
   top: "0"
 }
 
