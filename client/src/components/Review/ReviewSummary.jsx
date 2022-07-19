@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 import ReviewBreakdown from "./ReviewBreakdown.jsx";
 
-function ReviewSummary({reviews}) {
+function ReviewSummary({reviews, filterReviews}) {
     reviews = reviews || [];
     let [totalScore, setTotalScore] = useState(0);
     let [numOnes, setNumOnes] = useState(0);
@@ -93,7 +93,7 @@ function ReviewSummary({reviews}) {
     return(
         <SummaryWrapper>
             <AverageReviewScore AverageScore={averageScore}/>
-            <ReviewBreakdown ones={numOnes} twos={numTwos} threes={numThrees} fours={numFours} fives={numFives}/>
+            <ReviewBreakdown filterReviews={filterReviews} ones={numOnes} twos={numTwos} threes={numThrees} fours={numFours} fives={numFives}/>
         </SummaryWrapper>
     )
 }
