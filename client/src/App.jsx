@@ -6,6 +6,7 @@ import Similar from './components/Similar/Similar.jsx';
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { tracker } from "./Features/questions.js";
 import { addProduct } from "./Features/addProduct.js"
 import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js"
 
@@ -17,12 +18,20 @@ import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js
 
 function App () {
   const dispatch = useDispatch();
+<<<<<<< HEAD
   var product = '66646'
+=======
+  var product = '66670'
+>>>>>>> dev
 
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}`)
     .then((success) => {
+<<<<<<< HEAD
       // console.log("success", success)
+=======
+      //console.log("success", success)
+>>>>>>> dev
       dispatch(addProduct(success.data))
     })
     .catch((error) => {
@@ -57,9 +66,13 @@ function App () {
   }, []);
 
     return (
-      <div>
+      <div onClick={(e) => dispatch(tracker({
+        element: e.target.getAttribute('element'),
+        widget: e.target.getAttribute('widget'),
+        time: `${new Date}`
+      }))}>
           <Overview/>
-          <Questions/>
+          <Questions productID={product}/>
           <Reviews/>
           <Similar/>
       </div>
