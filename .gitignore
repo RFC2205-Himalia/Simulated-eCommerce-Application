@@ -5,7 +5,7 @@
 
 #Dev added Ignore
 .env
-
+Bundle.js
 
 
 # User-specific files
@@ -14,6 +14,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
