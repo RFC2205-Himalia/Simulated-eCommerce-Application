@@ -1,14 +1,16 @@
 import React from "react";
-import AverageReviewScore from "./AverageReviewScore.jsx";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
 
+import AverageReviewScore from "./AverageReviewScore.jsx";
 import ReviewBreakdown from "./ReviewBreakdown.jsx";
+import Characteristics from "./Characteristics.jsx";
 
-function ReviewSummary({reviews, filterReviews}) {
+function ReviewSummary({reviews, filterReviews, reviewMeta}) {
     reviews = reviews || [];
+    reviewMeta = reviewMeta || {characteristics:''};
     let [totalScore, setTotalScore] = useState(0);
     let [numOnes, setNumOnes] = useState(0);
     let [numTwos, setNumTwos] = useState(0);
@@ -16,6 +18,8 @@ function ReviewSummary({reviews, filterReviews}) {
     let [numFours, setNumFours] = useState(0);
     let [numFives, setNumFives] = useState(0);
     let [averageScore, setAverageScore] = useState(0);
+
+    // console.log(reviewMeta);
     
     function calcAvgScore (reviewsArr) {
         let tempNumOnes = 0;
@@ -94,6 +98,7 @@ function ReviewSummary({reviews, filterReviews}) {
         <SummaryWrapper>
             <AverageReviewScore AverageScore={averageScore}/>
             <ReviewBreakdown filterReviews={filterReviews} ones={numOnes} twos={numTwos} threes={numThrees} fours={numFours} fives={numFives}/>
+            <Characteristics characteristics={reviewMeta.characteristics}/>
         </SummaryWrapper>
     )
 }
@@ -102,7 +107,8 @@ function ReviewSummary({reviews, filterReviews}) {
 function mapStateToProps(state) {
     // console.log("mapStateToProps: ",state.addReviews.reviews);
     let reviews = state.addReviews.reviews;
-    return {reviews: reviews};
+    let reviewMeta = state.addReviews.reviewMeta;
+    return {reviews: reviews, reviewMeta: reviewMeta};
 }
 
 

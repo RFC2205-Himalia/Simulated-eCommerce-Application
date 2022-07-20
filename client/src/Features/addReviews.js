@@ -19,10 +19,13 @@ export const addReviewsSlice = createSlice({
     },
     addAvgScore: (state, action) => {
       state.avgReviewScore = action.payload;
+    },
+    addReviewMeta: (state, action) => {
+      state.reviewMeta = action.payload;
     }
   }
 })
 
-export const {addReviews, addAvgScore} = addReviewsSlice.actions
+export const {addReviews, addAvgScore, addReviewMeta} = addReviewsSlice.actions
 
 export default addReviewsSlice.reducer;

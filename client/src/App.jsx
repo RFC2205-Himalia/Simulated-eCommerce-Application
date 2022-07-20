@@ -7,7 +7,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addProduct } from "./Features/addProduct.js"
-import { addReviews, addAvgScore } from "./Features/addReviews.js"
+import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js"
 
 
 
@@ -40,12 +40,15 @@ function App () {
       success.data.results.forEach((element) => {
         aggregateReviewScore += element.rating;
       })
-
-      
       dispatch(addAvgScore(aggregateReviewScore/success.data.results.length));
     })
     .catch((err) => {
       console.log(err);
+    })
+
+    axios.get(`http://localhost:3000/reviews/meta?product_id=${productID}`)
+    .then((success) => {
+      dispatch(addReviewMeta(success.data));
     })
   }
 

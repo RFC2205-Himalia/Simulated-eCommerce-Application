@@ -35,7 +35,7 @@ function ReviewWidget () {
       })
     })
 
-    console.log(results);
+    // console.log(results);
     setReviews(results);
   }
 
@@ -62,7 +62,7 @@ function ReviewWidget () {
       <>
         <Title>Ratings & Reviews</Title>
         <Parent>
-          <ReviewSummary filterReviews={addFilters}/>
+          <ReviewSummary  filterReviews={addFilters}/>
           <ReviewList reviews={reviews}/>
         </Parent>
       </>
