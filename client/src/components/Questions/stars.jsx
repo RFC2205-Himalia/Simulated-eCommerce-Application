@@ -8,8 +8,6 @@ function stars() {
   const active = 3.8; //REPLACE WITH VARIABLE FOR RATING NUMBER
 
   return (
-    // Use linear-Gradient to fill the empty stars?
-
     <div style={emptyStars}>
       {[...new Array(totalStars)].map((arr, index) => {
         const activeStar = active;

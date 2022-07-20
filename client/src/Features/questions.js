@@ -16,7 +16,6 @@ export const questionData = createSlice({
   },
   reducers: {
     tracker: (state, action) => {
-      //[...state.tracking],
       state.tracking = (state.tracking).concat([action.payload])
     },
     refresh: (state) => {

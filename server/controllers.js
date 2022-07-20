@@ -1,9 +1,7 @@
 const Model = require("./model.js");
 
 const get = (req, res) => {
-  console.log('getting')
   const urlTail = req.url
-  // console.log('test 1', urlTail)
   Model.getProductData(urlTail)
   .then((success) => {
     // console.log('test 2', success.data)
