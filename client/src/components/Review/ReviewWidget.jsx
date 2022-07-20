@@ -13,31 +13,63 @@ import sampleData from "./ReviewSampleData.js"
 function ReviewWidget () {
   const reviewsFromStore = useSelector((state) => state.addReviews.reviews);
   let [reviews, setReviews] = useState([]);
+  let [filters, setFilters] = useState([]);
 
 
   useEffect(() => {
     setReviews(reviewsFromStore);
   },[reviewsFromStore])
 
-  let filterReviewsByStar = (star) => {
-    let tempArray = reviewsFromStore;
+  useEffect(() => {
+    // console.log("in filters useEffect");
+    filterReviewsByStar();
+  },[filters])
 
-    let results = tempArray.filter(element => {
-      // console.log(element.rating === star);
-      return element.rating === star
+  useEffect(() => {
+    // console.log("in reviews useEffect");
+  },[reviews])
+
+
+
+  let filterReviewsByStar = () => {
+    let results = []
+
+    reviewsFromStore.forEach((element) => {
+      filters.forEach(filter => {
+        if(filter === element.rating){
+          results.push(element);
+        }
+      })
     })
 
     console.log(results);
     setReviews(results);
-    
-    // console.log(tempArray);
+  }
+
+  let addFilters = (star) => {
+    // console.log(star);
+    let tempFilters = [];
+
+    filters.forEach((element) => {
+      tempFilters.push(element);
+    })
+
+
+    if(tempFilters.includes(star)){
+      tempFilters.splice(tempFilters.indexOf(star),1);
+    } else {
+      tempFilters.push(star);
+    }
+
+    setFilters(tempFilters);
+    // console.log(filters);
   }
 
     return (
       <>
         <Title>Ratings & Reviews</Title>
         <Parent>
-          <ReviewSummary filterReviews={filterReviewsByStar}/>
+          <ReviewSummary filterReviews={addFilters}/>
           <ReviewList reviews={reviews}/>
         </Parent>
       </>
