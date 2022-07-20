@@ -88,7 +88,7 @@ const formStyle = {
   flexDirection: "column",
   marginLeft: "auto",
   marginRight: "auto",
-  width: "100%",
+  width: "98vw",
   position: 'relative',
   alignItems: "center",
 };

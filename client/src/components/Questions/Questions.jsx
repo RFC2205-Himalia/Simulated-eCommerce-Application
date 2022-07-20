@@ -82,7 +82,7 @@ function Questions ({productID}) {
 
   return (
     <div className="questionsWrapper" style={wrapper} >
-      <p style={h2}>{'QUESTIONS & ANSWERS'}</p>
+      <span style={h2}>{'QUESTIONS & ANSWERS'}</span>
       <Search />
       <List />
       <Buttons product={productNumber}/>
@@ -100,10 +100,12 @@ const h2 = {
   textAlign: 'left',
   left: '20vw',
   flexDirection: "column",
-  fontWeight: "100"
+  width: "20vw",
+  fontWeight: "100",
+  overflowX: "hidden"
 };
 
 const wrapper = {
-  width: "100vw",
+  maxWidth: "100vw",
   //backgroundColor: "#ecf2f9"
 }
