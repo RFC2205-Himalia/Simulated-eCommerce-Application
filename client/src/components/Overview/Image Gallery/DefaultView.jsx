@@ -28,7 +28,7 @@ function DefaultView () {
    <StyledSlider >
     <StyledLeftArrow onClick={prevSlide}/>
     <StyledRightArrow onClick={nextSlide}/>
-      <StyledImage src={`${photos[currentPhoto].url ? photos[currentPhoto].url : photos[currentPhoto].thumbnail_url}`}></StyledImage>
+      <StyledImage src={`${photos[currentPhoto].thumbnail_url}`}></StyledImage>
   </StyledSlider>
   :
   <div>
