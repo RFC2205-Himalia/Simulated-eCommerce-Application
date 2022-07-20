@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<coverage generated="1657663928872" clover="3.2.0">
+  <project timestamp="1657663928872" name="All files">
+    <metrics statements="20" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="4" coveredmethods="4" elements="32" coveredelements="28" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+    <file name="Sort.jsx" path="/Users/nicholaskempkes/repositories/FEC-2205/Front_End_Capstone/client/src/components/Questions/Sort.jsx">
+      <metrics statements="20" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="23" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+    </file>
+=======
 <coverage generated="1657725253924" clover="3.2.0">
   <project timestamp="1657725253924" name="All files">
     <metrics statements="27" coveredstatements="18" conditionals="8" coveredconditionals="2" methods="13" coveredmethods="9" elements="48" coveredelements="29" complexity="0" loc="27" ncloc="27" packages="3" files="7" classes="7"/>
@@ -59,5 +87,6 @@
         <line num="12" count="2" type="stmt"/>
       </file>
     </package>
+>>>>>>> dev
   </project>
 </coverage>
