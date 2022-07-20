@@ -8,7 +8,7 @@ const { size: [size, setSize] } = {
   size: useState({size: undefined, quantity: undefined}), ...(props.sizeState || {})
 };
 
-const [stockQuantity, setStockQuantity] = useState([]);
+const [stockQuantity, setStockQuantity] = useState(undefined);
 
 useEffect(() => {
   var iterableList = [];
@@ -17,9 +17,11 @@ useEffect(() => {
       iterableList.push(i+1);
     }
   }
-  setStockQuantity([])
-  setStockQuantity(stockQuantity => [...stockQuantity, ...iterableList]);
-}, [props.sizeState]);
+  if(size.size) {
+    setStockQuantity([])
+    setStockQuantity(stockQuantity => [...stockQuantity, ...iterableList]);
+  }
+}, [size]);
 
 console.log('IS THIS HERE', size.quantity, stockQuantity)
 
@@ -32,11 +34,19 @@ return ( size.quantity ?
   }) : <option>OUT OF STOCK</option>}
  </select>
   :
-  <select disabled={true}>
+  size.quantity === 0 ?
+  <select>
+    <option >
+      OUT OF STOCK
+    </option>
+  </select>
+  :
+    <select disabled={true}>
     <option >
       -
     </option>
-  </select>
+    </select>
+
 )
 
   // switch (stockQuantity) {

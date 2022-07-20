@@ -13,9 +13,9 @@ import { useEffect } from "react";
 
 function Overview () {
   const dispatch = useDispatch();
-  const product = '66658'
+  const product = '66644'
   //66643 for nulls
-  //66644 for default clothing
+  //66644 for default clothing and multiple photos
   //66656 for one size (and can check if number auto switches on style change, currently no)
   //66658 for default shoes
   //66686 for out of stock
@@ -42,7 +42,6 @@ function Overview () {
       <StyleSelector />
       <AddCart />
       <DefaultView />
-
     </div>
     )
 }

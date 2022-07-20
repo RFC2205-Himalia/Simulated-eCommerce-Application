@@ -19,6 +19,11 @@ function SizeSelector (props) {
   var ready = false;
   // console.log(currentSkus);
 
+  const styleList = useSelector((state) => state.stylesList.styles.results)
+  // console.log('Style\'s List', styleList)
+  const currentStyle = useSelector((state) => state.stylesList.currentStyle)
+  // console.log('Current Style', currentStyle)
+
   const sizeListener = (event) => {
     var updatedSize = event.target.value
     _.each(currentSkus, function(value, key, list){
@@ -50,19 +55,21 @@ function SizeSelector (props) {
     })
   }, [currentSkus]);
 
-  return (
+  return ( styleList ?
     <div>
-      <select name={currentSkus} value={size.size} onChange={sizeListener}>
+      <select value={size.size} onChange={sizeListener}>
         <option value='Select Size'>Select Size</option>
+        <option>{styleList[currentStyle].name}</option>
         {availableSizes.map((size, index) => {
-          return <option key={"key" + index} value={size}>{size}</option>
+          return <option key={"key" + index} value={size} name={currentSkus}>{size}</option>
         })}
       </select>
     <QuantitySelector sizeState={{size: [size, setSize]}}/>
     <button onClick={checker}>test Click</button>
     </div>
+    :
+   <div></div>
   )
-
 }
 
 export default SizeSelector;
