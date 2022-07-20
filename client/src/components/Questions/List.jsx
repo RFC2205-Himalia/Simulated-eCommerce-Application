@@ -44,7 +44,7 @@ const scrollable =
   maxHeight: '50vh',
   display: "flex",
   flexDirection: "column",
-  width: "100%",
+  width: "95vw",
   alignSelf: "center",
   alignItems: "left",
   textAlign: "left",
