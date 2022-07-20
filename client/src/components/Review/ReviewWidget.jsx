@@ -21,15 +21,8 @@ function ReviewWidget () {
   },[reviewsFromStore])
 
   useEffect(() => {
-    // console.log("in filters useEffect");
     filterReviewsByStar();
   },[filters])
-
-  useEffect(() => {
-    // console.log("in reviews useEffect");
-  },[reviews])
-
-
 
   let filterReviewsByStar = () => {
     let results = []
