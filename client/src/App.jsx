@@ -18,20 +18,12 @@ import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js
 
 function App () {
   const dispatch = useDispatch();
-<<<<<<< HEAD
   var product = '66646'
-=======
-  var product = '66670'
->>>>>>> dev
 
   const requests = (productID) => {
     axios.get(`http://localhost:3000/products/${productID}`)
     .then((success) => {
-<<<<<<< HEAD
       // console.log("success", success)
-=======
-      //console.log("success", success)
->>>>>>> dev
       dispatch(addProduct(success.data))
     })
     .catch((error) => {
