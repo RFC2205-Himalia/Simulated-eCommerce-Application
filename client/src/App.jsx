@@ -4,6 +4,7 @@ import Questions from './components/Questions/Questions.jsx';
 import Reviews from './components/Review/ReviewWidget.jsx';
 import Similar from './components/Similar/Similar.jsx';
 import axios from "axios";
+import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { tracker } from "./Features/questions.js";
@@ -58,7 +59,7 @@ function App () {
   }, []);
 
     return (
-      <div onClick={(e) => dispatch(tracker({
+      <AppWrapper onClick={(e) => dispatch(tracker({
         element: e.target.getAttribute('element'),
         widget: e.target.getAttribute('widget'),
         time: `${new Date}`
@@ -67,9 +68,14 @@ function App () {
           <Questions productID={product}/>
           <Reviews/>
           <Similar/>
-      </div>
+      </AppWrapper>
     )
 }
+
+
+const AppWrapper = styled.div`
+  
+`;
 
 export default App;
 
