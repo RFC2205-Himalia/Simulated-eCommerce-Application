@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import Stars from '../Questions/Stars.jsx';
+
+
 
 
 function ReviewListElement ({review}) {
@@ -10,7 +13,7 @@ function ReviewListElement ({review}) {
     return (
         <IndividualReviewElement>
             <StarsAndDate>
-                <SecondaryText>Stars Here </SecondaryText>
+                <Stars numStars={review.rating}/>
                 <ReviewDate>{review.reviewer_name}, {formattedDate}</ReviewDate>
             </StarsAndDate>
             <Title>{review.summary}</Title>
