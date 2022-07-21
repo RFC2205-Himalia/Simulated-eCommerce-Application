@@ -4,6 +4,7 @@ import Questions from './components/Questions/Questions.jsx';
 import Reviews from './components/Review/ReviewWidget.jsx';
 import Similar from './components/Similar/Similar.jsx';
 import axios from "axios";
+import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { tracker } from "./Features/questions.js";
@@ -18,10 +19,10 @@ import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js
 
 function App () {
   const dispatch = useDispatch();
-  var product = '66646'
+  var product = '66670'
 
   const requests = (productID) => {
-    axios.get(`http://localhost:3000/products/${productID}`)
+    axios.get(`/products/${productID}`)
     .then((success) => {
       // console.log("success", success)
       dispatch(addProduct(success.data))
@@ -29,8 +30,8 @@ function App () {
     .catch((error) => {
       // console.log("error", error)
     })
-    
-    axios.get(`http://localhost:3000/reviews?product_id=${productID}`)
+
+    axios.get(`/reviews?product_id=${productID}`)
     .then((success) => {
       dispatch(addReviews(success.data));
 
@@ -47,9 +48,12 @@ function App () {
       console.log(err);
     })
 
-    axios.get(`http://localhost:3000/reviews/meta?product_id=${productID}`)
+    axios.get(`/reviews/meta?product_id=${productID}`)
     .then((success) => {
       dispatch(addReviewMeta(success.data));
+    })
+    .catch((err) => {
+      console.log(err);
     })
   }
 
@@ -58,7 +62,7 @@ function App () {
   }, []);
 
     return (
-      <div onClick={(e) => dispatch(tracker({
+      <AppWrapper onClick={(e) => dispatch(tracker({
         element: e.target.getAttribute('element'),
         widget: e.target.getAttribute('widget'),
         time: `${new Date}`
@@ -67,9 +71,14 @@ function App () {
           <Questions productID={product}/>
           <Reviews/>
           <Similar/>
-      </div>
+      </AppWrapper>
     )
 }
+
+
+const AppWrapper = styled.div`
+
+`;
 
 export default App;
 

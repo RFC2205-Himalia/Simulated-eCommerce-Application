@@ -88,7 +88,7 @@ const formStyle = {
   flexDirection: "column",
   marginLeft: "auto",
   marginRight: "auto",
-  width: "100%",
+  width: "98vw",
   position: 'relative',
   alignItems: "center",
 };
@@ -97,14 +97,14 @@ const inputStyle = {
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  width: '60vw',
+  width: '62vw',
   alignSelf: "center",
   height: "40px"
 };
 
 const icon = {
   position: 'absolute',
-  right: '21vw',
+  right: '18.5vw',
   cursor: 'pointer',
   top: "30%",
   textShadow: "2px 2px 5px gray",

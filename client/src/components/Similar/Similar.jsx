@@ -5,19 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 // remove from final product
-
 function Similar () {
 
   return (
     <div>
       <p>Similar Products</p>
-<<<<<<< HEAD
       {/* <button onClick = {() => {
         dispatch(test(4))
       }}>Test Click</button> */}
-=======
-      <button>Test Click</button>
->>>>>>> dev
     </div>
   )
 

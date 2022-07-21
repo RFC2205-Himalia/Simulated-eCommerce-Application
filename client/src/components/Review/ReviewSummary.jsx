@@ -84,16 +84,6 @@ function ReviewSummary({reviews, filterReviews, reviewMeta}) {
         calcAvgScore(reviews);
         // console.log(totalScore);
       }, [reviews]); 
-
-    useEffect(() => {
-        // console.log("totalScore ",totalScore);
-    }, [totalScore])
-
-    useEffect(() => {
-        // console.log("averageScore ",averageScore);
-    }, [averageScore])
-      
-      
     return(
         <SummaryWrapper>
             <AverageReviewScore AverageScore={averageScore}/>

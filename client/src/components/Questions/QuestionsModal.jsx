@@ -25,7 +25,7 @@ function QuestionsModal({ closeModal, productID }) {
         "body": `${questionValues.question}`,
         "name": `${questionValues.name}`,
         "email": `${questionValues.email}`,
-        "product_id": id
+        "product_id": Number(id)
       }
       postRequests(body)
       closeModal(id);
@@ -36,6 +36,7 @@ function QuestionsModal({ closeModal, productID }) {
   const postRequests = (body) => {
     axios.post(`http://localhost:3000/qa/questions`, body)
       .then(() => {
+        console.log(body);
         dispatch(refresh());
       })
       .catch((error) => {
