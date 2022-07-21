@@ -82,12 +82,13 @@ export default Buttons;
 const buttons = {
   display: "flex",
   textAlign: "left",
-  left: "18vw",
+  left: "18.5vw",
   width: "60vw",
   height: "75px",
   flexDirection: "row",
-  marginLeft: "20vw",
-  marginTop: "10px"
+  marginLeft: "19vw",
+  marginTop: "10px",
+  marginBottom: "40px"
 }
 
 const indvButton = {

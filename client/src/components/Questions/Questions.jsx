@@ -58,7 +58,7 @@ function Questions ({productID}) {
   }, [sortedAnswers])
 // Sends out request for Q&A data for specified product ID
   const getRequests = (url) => {
-    axios.get(`/qa/${url}`)
+    axios.get(`/qa/${url}&count=100`)
     .then((success) => {
       dispatch(questionList(success.data.results));
     })
@@ -82,8 +82,12 @@ function Questions ({productID}) {
 
   return (
     <div className="questionsWrapper" style={wrapper} >
-      <span style={h2}>{'QUESTIONS & ANSWERS'}</span>
+      <div style={titleContainer}>
+      <span style={h2}>{`QUESTIONS & ANSWERS`}</span>
+      <span style={numberAsked}>({questions.length}) Questions Asked About This Product </span>
+      </div>
       <Search />
+      {/* <span style={numberAsked}>({questions.length}) Questions Asked About This Product </span> */}
       <List />
       <Buttons product={productNumber}/>
     </div>
@@ -96,16 +100,36 @@ export default Questions;
 
 const h2 = {
   position: 'relative',
-  display: 'flex',
   textAlign: 'left',
-  left: '20vw',
-  flexDirection: "column",
-  width: "20vw",
+  width: "30vw",
   fontWeight: "100",
-  overflowX: "hidden"
+  fontSize: "26px",
+  overflowX: "hidden",
+  marginBottom: "10px"
+};
+const numberAsked = {
+  position: 'relative',
+  textAlign: 'right',
+  width: "32vw",
+  fontWeight: "100",
+  overflowX: "hidden",
+  marginBottom: "10px",
+  marginTop: "5px",
+  fontSize: "14px",
 };
 
 const wrapper = {
   maxWidth: "100vw",
   //backgroundColor: "#ecf2f9"
+}
+
+const titleContainer = {
+  display: "flex",
+  flexDirection: "row",
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "62vw",
+  position: 'relative',
+  alignItems: "center",
+  alignSelf: "center"
 }
