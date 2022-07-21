@@ -11,12 +11,14 @@ function List() {
   return (
     <div style={scrollable}>
       {answersSorted ? list.map((question) => {
+        let keys = Object.keys(question.answers);
         return (
           <div  style={questionsStyle} key={`${question.question_id}`}>
             <br></br>
             <div
               style={{ 'fontSize': '18px', maxWidth: "45vw"}}>
-              <b>Q: {question.question_body}</b>
+              <b>Q: {question.question_body} <span style={userStyle}> ({keys.length}) {keys.length === 1 ? 'Answer' : 'Answers'}</span></b>
+
             </div>
             <div style={questionHelp}>
             <Helpful
@@ -39,16 +41,16 @@ export default List;
 const scrollable =
 {
   marginTop: "10px",
+  marginLeft: "16vw",
   position: "relative",
-  overflow: 'scroll',
+  overflowY: 'auto',
   maxHeight: '50vh',
   display: "flex",
   flexDirection: "column",
-  width: "95vw",
-  alignSelf: "center",
+  width: "63vw",
   alignItems: "left",
   textAlign: "left",
-  left: "0.5vw"
+  left: "1.5vw"
 };
 
 const questionsStyle = {
@@ -67,3 +69,9 @@ const questionHelp = {
   width: "60vw",
   marginBottom: "10px"
 }
+
+const userStyle = {
+  //position: "relative",
+  fontSize: '12px',
+  color: '#6966669b',
+};
