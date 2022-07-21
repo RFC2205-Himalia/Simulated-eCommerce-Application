@@ -22,7 +22,7 @@ function App () {
   var product = '66646'
 
   const requests = (productID) => {
-    axios.get(`http://localhost:3000/products/${productID}`)
+    axios.get(`/products/${productID}`)
     .then((success) => {
       // console.log("success", success)
       dispatch(addProduct(success.data))
@@ -30,8 +30,8 @@ function App () {
     .catch((error) => {
       // console.log("error", error)
     })
-    
-    axios.get(`http://localhost:3000/reviews?product_id=${productID}`)
+
+    axios.get(`/reviews?product_id=${productID}`)
     .then((success) => {
       dispatch(addReviews(success.data));
 
@@ -48,9 +48,12 @@ function App () {
       console.log(err);
     })
 
-    axios.get(`http://localhost:3000/reviews/meta?product_id=${productID}`)
+    axios.get(`/reviews/meta?product_id=${productID}`)
     .then((success) => {
       dispatch(addReviewMeta(success.data));
+    })
+    .catch((err) => {
+      console.log(err);
     })
   }
 
@@ -74,7 +77,7 @@ function App () {
 
 
 const AppWrapper = styled.div`
-  
+
 `;
 
 export default App;

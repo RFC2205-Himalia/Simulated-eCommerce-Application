@@ -10,7 +10,7 @@ function Helpful(props) {
   // Sends request to report question or answer
   const putRequests = (qOrAID) => {
     let url = `${qOrAID}`;
-    axios.put(`http://localhost:3000/qa/${url}`)
+    axios.put(`/qa/${url}`)
       .then(() => {
         console.log('PUT')
       })
