@@ -20,7 +20,7 @@ function Overview () {
   //66658 for default shoes
   //66686 for out of stock
   const requests = (productID) => {
-    axios.get(`http://localhost:3000/products/${productID}/styles`)
+    axios.get(`/products/${productID}/styles`)
     .then((success) => {
       console.log("Styles", success)
       dispatch(getStyles(success.data))

@@ -33,7 +33,7 @@ function AnswersModal({ data, closeModal }) {
 
   // Creates new answer
   const postRequests = (questionID, body) => {
-    axios.post(`http://localhost:3000/qa/questions/${questionID}/answers`, body)
+    axios.post(`/qa/questions/${questionID}/answers`, body)
       .then(() => {
         dispatch(refresh());
       })

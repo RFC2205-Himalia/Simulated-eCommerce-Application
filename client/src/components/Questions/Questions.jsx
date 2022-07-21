@@ -58,7 +58,7 @@ function Questions ({productID}) {
   }, [sortedAnswers])
 // Sends out request for Q&A data for specified product ID
   const getRequests = (url) => {
-    axios.get(`http://localhost:3000/qa/${url}`)
+    axios.get(`/qa/${url}`)
     .then((success) => {
       dispatch(questionList(success.data.results));
     })
