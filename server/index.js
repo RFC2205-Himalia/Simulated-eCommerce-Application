@@ -3,10 +3,6 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const controller = require("./controllers.js");
-<<<<<<< HEAD
-=======
-
->>>>>>> fb6cdd97ddbe9e35a7d37c6a6ffaaac09005e548
 
 
 const app = express();
