@@ -98,6 +98,6 @@ module.exports = {
   }
 };
 
-module.exports = {
-  plugins: [new CompressionPlugin()],
-};
+// module.exports = {
+//   plugins: [new CompressionPlugin()],
+// };
