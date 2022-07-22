@@ -26,7 +26,7 @@ function ReviewRecommendations ({data}) {
 
     return (
         <Recommended>
-            <div>{percentageRec}% of people Recommended this Item!</div>
+            <div>{percentageRec}% recommended this Item!</div>
         </Recommended>
     )
 }
