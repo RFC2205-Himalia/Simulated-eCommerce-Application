@@ -6,15 +6,16 @@ Pinterest
 */
 
 import React from 'react';
+import { PinterestIcon, TwitterIcon, FacebookIcon, StyledIcons } from './ProductDetails.style.js'
 
 function ShareSocial () {
 
   return (
-    <div>
-        <li>Facebook</li>
-        <li>Twitter</li>
-        <li>Pinterest</li>
-    </div>
+    <StyledIcons>
+        <FacebookIcon></FacebookIcon>
+        <TwitterIcon></TwitterIcon>
+        <PinterestIcon></PinterestIcon>
+    </StyledIcons>
   )
 
 }

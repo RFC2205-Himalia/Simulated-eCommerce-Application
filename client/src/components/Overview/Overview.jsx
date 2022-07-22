@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import { getStyles, setCurrentStyle } from '../../Features/Styles.js'
 import { useEffect } from "react";
 
+import { AppGrid, RightSide, LeftSide } from './Overview.style.js'
+
 
 
 function Overview () {
@@ -37,11 +39,16 @@ function Overview () {
 
     return (
     <div>
-      <h1>Overview Component</h1>
-      <ProductDetails data-testid="productDetails"/>
-      <StyleSelector />
-      <AddCart />
-      <DefaultView />
+      <AppGrid>
+        <LeftSide>
+          <DefaultView />
+        </LeftSide>
+        <RightSide>
+          <ProductDetails data-testid="productDetails"/>
+          <StyleSelector />
+          <AddCart />
+        </RightSide>
+      </AppGrid>
     </div>
     )
 }
