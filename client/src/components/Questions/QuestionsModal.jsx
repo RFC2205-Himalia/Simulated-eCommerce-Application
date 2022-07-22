@@ -163,15 +163,8 @@ export default QuestionsModal;
 //CSS Stuff.... Probably change later to styled-components
 
 const error = {
-  color: "red",
+  color: "#8B0000",
   fontSize: '12px'
-}
-
-const headers = {
-  maxWidth: "500px",
-  right: "0",
-  postition: "absolute",
-  textAlign: "center",
 }
 
 const modalBackground = {
@@ -183,16 +176,16 @@ const modalBackground = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "rgba(159,159,159,0.5)",
+  backgroundColor: "rgba(42,42,42,0.9",
   overflow: "hidden",
 }
 
 const modalContainer = {
   border: "2px solid black",
   width: "auto",
-  height: "auto",
+  minHeight: "40vh",
   borderRadius: "12px",
-  backgroundColor: "white",
+  backgroundColor: "#7a7a7a",
   boxShadow: "grey",
   display: "flex",
   flexDirection: "column",
@@ -202,11 +195,21 @@ const modalContainer = {
   alignItems: "center",
 }
 
+const headers = {
+  maxWidth: "500px",
+  right: "0",
+  postition: "absolute",
+  textAlign: "center",
+  color: '#F0EAD6'
+}
+
 const formDiv = {
   display: "inlineBlock",
   maxWidth: "500px",
   textAlign: "right",
-  marginRight: "50px"
+  marginRight: "100px",
+  color: '#F0EAD6',
+  margin: "15px"
 }
 
 const textBox = {
@@ -218,8 +221,8 @@ const textBox = {
 
 const userStyle = {
   fontSize: '12px',
-  color: '#5c5c5c',
   marginRight: "10px",
+  color: '#F0EAD6'
 };
 
 const footer = {
