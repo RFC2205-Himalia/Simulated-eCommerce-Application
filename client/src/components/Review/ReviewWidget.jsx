@@ -64,7 +64,6 @@ function ReviewWidget () {
         <Parent>
           <ReviewSummary  filterReviews={addFilters}/>
           <ReviewList reviews={reviews}/>
-          <ReviewButtons/>
         </Parent>
       </>
     )

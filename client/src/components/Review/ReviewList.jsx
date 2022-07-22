@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 import ReviewListElement from "./ReviewListElement.jsx";
+import ReviewButtons from "./ReviewButtons.jsx";
 
 
 function ReviewList ({reviews}) {
@@ -16,6 +17,7 @@ function ReviewList ({reviews}) {
                     return <ReviewListElement key={element.review_id} review = {element}/>
                 })
             }
+            <ReviewButtons/>
         </ReviewListWrapper>
     )
 }
