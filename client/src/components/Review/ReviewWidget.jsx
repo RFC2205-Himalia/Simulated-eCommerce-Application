@@ -39,6 +39,21 @@ function ReviewWidget () {
     setReviews(results);
   }
 
+  let orderReviews = (orderBy) => {
+    let results = []
+
+    switch (orderBy){
+      case "Helpfulness":
+        break;
+      case "Newest":
+        break;
+      case "Relevant":
+        break;
+      default:
+        break;
+    }
+  }
+
   let addFilters = (star) => {
     // console.log(star);
     let tempFilters = [];
@@ -63,7 +78,7 @@ function ReviewWidget () {
         <Title>Ratings & Reviews</Title>
         <Parent>
           <ReviewSummary  filterReviews={addFilters}/>
-          <ReviewList reviews={reviews}/>
+          <ReviewList sortReviews={orderReviews} reviews={reviews}/>
         </Parent>
       </>
     )

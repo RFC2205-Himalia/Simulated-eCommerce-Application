@@ -1,20 +1,29 @@
 import React from 'react';
-import { useSelector } from "react-redux";
 import styled from 'styled-components';
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
 
 
-function ReviewButtons () {
+import ReviewModal from './ReviewModal.jsx';
+
+
+function ReviewButtons ({productId}) {
+    let [showModal, setShowModal] = useState(false)
 
 
     let moreHandler = () => {
-        console.log("More Reviews Please!")
+        console.log("More Reviews Please!");
     }
 
     let showHideModal = () => {
-        console.log("show me the modal!")
+        // console.log("show me the modal!");
+        setShowModal(current => !current);
     }
+
+    // useEffect(() => {
+    //     console.log(showModal);
+    //   }, [showModal])
 
     return (
         <div>
@@ -38,8 +47,21 @@ function ReviewButtons () {
             >
                 ADD A Review +
             </button>
+
+            {showModal ?
+                <ReviewModal
+                productID={productId}
+                closeModal={showHideModal}
+                /> : null
+            }
         </div>
     )
+}
+
+
+function mapStateToProps(state) {
+    let productId = state.addProduct.id;
+    return {productId: productId};
 }
 
 const buttons = {
@@ -65,4 +87,4 @@ const buttons = {
     boxShadow: "1px 1px 5px gray"
   }
   
-export default ReviewButtons;
+  export default connect(mapStateToProps)(ReviewButtons);
