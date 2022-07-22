@@ -7,6 +7,7 @@ followed by the original price which is struckthrough.
 */
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { StyledPrice } from './ProductDetails.style.js'
 
 
 function Price () {
@@ -30,16 +31,16 @@ function Price () {
 //for refactoring consider using turnary (? :)
 if (!salePrice) {
   return (
-  <div>
-    {originalPrice}
-  </div>
+  <StyledPrice>
+    ${originalPrice}
+  </StyledPrice>
   )
 } else if (salePrice) {
   return (
-    <div>
-      <span><s>{originalPrice}</s></span>
-      <span style={{color: "red"}}> {salePrice}</span>
-    </div>
+    <StyledPrice>
+      <span><s>${originalPrice}</s></span>
+      <span style={{color: "red"}}> ${salePrice}</span>
+    </StyledPrice>
   )
 }
 
