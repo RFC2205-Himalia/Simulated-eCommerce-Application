@@ -13,7 +13,7 @@ function ReviewList ({reviews, sortReviews}) {
     return (
         <ReviewListWrapper>
             {/*pass whatever compoonent this div becomes sortReviews*/}
-            <div>Sort Reviews by dropdown here</div>
+            <SortReviews>{reviews.length} reviews, sorted by <DropDown>relevance</DropDown></SortReviews>
             {
                 reviews.map((element) => {
                     return <ReviewListElement key={element.review_id} review = {element}/>
@@ -27,7 +27,21 @@ function ReviewList ({reviews, sortReviews}) {
 const ReviewListWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: left;
+    color: #F0EAD6;
+    width: 31vw;
+
+`;
+
+const SortReviews = styled.div`
+    font-size: 26px;
+    font-weight; 100;
+
+`;
+
+const DropDown = styled.span`
+    text-decoration: underline;
+
 `;
 
 

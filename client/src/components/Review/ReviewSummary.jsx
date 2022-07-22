@@ -107,6 +107,9 @@ function mapStateToProps(state) {
 const SummaryWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    width: 31vw;
+    margin-left: auto;
+    margin-right; auto;
 `;
 
 export default connect(mapStateToProps)(ReviewSummary);

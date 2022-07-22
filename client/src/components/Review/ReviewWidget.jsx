@@ -74,25 +74,42 @@ function ReviewWidget () {
   }
 
     return (
-      <>
+      <Wrapper className="ReviewWrapper">
         <Title>Ratings & Reviews</Title>
         <Parent>
           <ReviewSummary  filterReviews={addFilters}/>
-          <ReviewList sortReviews={orderReviews} reviews={reviews}/>
+          <ReviewList style={{justifyContent: "center"}} sortReviews={orderReviews} reviews={reviews}/>
         </Parent>
-      </>
+      </Wrapper>
     )
 }
 
 
-const Title = styled.h1`
-  font-size: 1em;
-  color: dimgray;
+const Title = styled.h2`
+  font-weight: 100;
+  font-size: 26px;
+  color: #F0EAD6;
+  text-align: left;
+  width: 62vw;
+  position: relative;
+  margin-bottom: 10px;
 `;
 const Parent = styled.div`
   // border: 5px solid rgb(0,0,0);
   display: flex;
   flex-direction: row;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 62vw;
+  position: relative;
+  align-items: center;
+  align-self: center;
 `;
 
 

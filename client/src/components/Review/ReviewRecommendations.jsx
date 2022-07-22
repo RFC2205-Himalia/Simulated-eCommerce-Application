@@ -25,15 +25,32 @@ function ReviewRecommendations ({data}) {
 
 
     return (
-        <Recommended>
-            <div>{percentageRec}% recommended this Item!</div>
-        </Recommended>
+        <RecommendedWrapper>
+            <Recommended>{percentageRec}%</Recommended>
+            <Text>of people <br/> recommend this item!</Text>
+        </RecommendedWrapper>
     )
 }
 
-const Recommended = styled.div`
+const RecommendedWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: left;
+    color: #F0EAD6;
+    margin-top: 20px;
+    
+`;
+
+const Recommended = styled.div`
+    font-size: 70px;
+    font-weight: 100;
+`;
+
+const Text = styled.div`
+    padding-top: 15px;
+    font-weight: ;
+    font-size: 20px;
+    margin-left: 15px;
 `;
 
 export default ReviewRecommendations;

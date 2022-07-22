@@ -26,7 +26,7 @@ function ReviewListElement ({review}) {
 
 
 const Title = styled.p`
-  font-size: 1em;
+  font-size: 26px;
   text-align: flex-start;
   margin-top: 0px;
   font-weight: bold;
@@ -44,18 +44,20 @@ const SecondaryText = styled.p`
 `;
 
 const ReviewDate = styled.p`
-    font-size: .75em;
+    font-size: 17px;
     justify-content: flex-end;
+    padding-top: 10px
 `;
 
 const IndividualReviewElement = styled.div`
 //   border: 5px solid rgb(0,0,0);
-  width: 400px;
+  width: 40vw;
+  height: 10vh;
 
 `;
 
 const BodyText = styled.p`
-    font-size: .75em;
+    font-size: 15px;
 `;
 
 

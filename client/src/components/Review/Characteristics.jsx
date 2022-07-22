@@ -55,7 +55,7 @@ function Characteristics({ characteristics }) {
         }
 
         return (
-          <form key={characteristics[characteristic].id}>
+          <form style={{color:"#F0EAD6"}} key={characteristics[characteristic].id}>
             <CharacteristicsText>{characteristic}</CharacteristicsText>
             <Indicator>
               <Arrow/>
@@ -96,10 +96,10 @@ const Arrow = styled.div`
     position: absolute;
     border-style: solid;
     border-width: 10px 10px 0 10px;
-    border-color: #2a2a2a transparent transparent transparent;    position: absolute;
+    border-color: #F0EAD6 transparent transparent transparent;    position: absolute;
     border-style: solid;
     border-width: 10px 10px 0 10px;
-    border-color: #2a2a2a transparent transparent transparent;
+    border-color: #F0EAD6 transparent transparent transparent;
 `;
 
 const CharacteristicsWrapper = styled.div`
