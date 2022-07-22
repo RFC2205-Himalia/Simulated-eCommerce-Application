@@ -137,7 +137,7 @@ const photos = {
 const photosOuter = {
   paddingLeft: '22px',
   display: "flex",
-  flexDirection: "row"
+  flexDirection: "row",
 }
 
 const answersStyle = {

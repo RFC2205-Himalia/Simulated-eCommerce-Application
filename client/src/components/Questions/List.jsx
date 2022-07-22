@@ -64,11 +64,12 @@ const questionsStyle = {
 };
 
 const questionHelp = {
-  position: "relative",
-  top: "-2vh",
+  //position: "relative",
+  marginTop: "-16px",
   textAlign: "right",
   width: "60vw",
-  marginBottom: "10px"
+  marginBottom: "10px",
+
 }
 
 const userStyle = {
