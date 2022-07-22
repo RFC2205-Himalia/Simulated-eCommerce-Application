@@ -64,5 +64,6 @@ const button = {
   cursor: "pointer",
   backgroundColor: "#fffefee1",
   border: "rgba(159,159,159,0.2)",
-  boxShadow: "1px 1px 3px black"
+  boxShadow: "1px 1px 3px black",
+  padding: "5px"
 }

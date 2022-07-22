@@ -183,7 +183,7 @@ const modalBackground = {
 const modalContainer = {
   border: "2px solid black",
   width: "auto",
-  height: "auto",
+  minHeight: "40vh",
   borderRadius: "12px",
   backgroundColor: "#7a7a7a",
   boxShadow: "grey",
@@ -208,7 +208,8 @@ const formDiv = {
   maxWidth: "500px",
   textAlign: "right",
   marginRight: "100px",
-  color: '#F0EAD6'
+  color: '#F0EAD6',
+  margin: "15px"
 }
 
 const textBox = {
