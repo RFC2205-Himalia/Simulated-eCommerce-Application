@@ -2,13 +2,15 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import styled from 'styled-components';
 
+import Stars from '../Questions/Stars.jsx';
+
 
 function AverageReviewScore ({AverageScore}) {
     
     return (
         <AvgReviewScore>
             <div>{AverageScore} </div>
-            <div> Average Review Stars Here</div>
+           <Stars numStars={AverageScore}/>
         </AvgReviewScore>
     )
 }
