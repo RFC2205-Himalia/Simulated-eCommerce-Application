@@ -173,8 +173,8 @@ export default AnswersModal;
 //CSS Stuff.... Probably change later to styled-components
 
 const error = {
-  "color": "#8B0000",
-  'fontSize': '12px'
+  color: "#e20000",
+  fontSize: '14px'
 }
 
 const modalBackground = {
