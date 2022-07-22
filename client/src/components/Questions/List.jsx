@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Helpful from './helpfulComponent.jsx';
 import Answers from './renderAnswers.jsx';
 import { useSelector } from 'react-redux';
