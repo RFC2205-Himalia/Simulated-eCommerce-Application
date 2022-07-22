@@ -163,8 +163,8 @@ export default QuestionsModal;
 //CSS Stuff.... Probably change later to styled-components
 
 const error = {
-  color: "#8B0000",
-  fontSize: '12px'
+  color: "#e20000",
+  fontSize: '14px'
 }
 
 const modalBackground = {
@@ -239,5 +239,6 @@ const button = {
   borderRadius: "8px",
   fontSize: "16px",
   cursor: "pointer",
-  boxShadow: "2px 2px 5px gray"
+  boxShadow: "2px 2px 5px gray",
+  padding: "5px"
 }

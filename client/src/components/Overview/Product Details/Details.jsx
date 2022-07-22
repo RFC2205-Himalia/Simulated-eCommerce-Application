@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { StyledDesc } from './ProductDetails.style.js';
 
 function Details () {
 const productDetails = useSelector((state) => state.addProduct.products.description)
 
   return (
     <div>
-      <p>{productDetails}</p>
+      <StyledDesc>{productDetails}</StyledDesc>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SizeSelector from './SizeSelector.jsx';
 import { setCurrentSkus } from '../../../Features/Styles.js';
 import _, { each } from 'underscore';
+import ShareSocial from '../Product Details/ShareSocial.jsx';
 
 
 function AddCart () {
@@ -44,11 +45,34 @@ function AddCart () {
         <SizeSelector sizeState={{size: [size, setSize]}} availableSizesState={{availableSizes: [availableSizes, setAvailableSizes]}}/>
       </span>
       <div>
-        <button>Add to Cart</button>
+        <button style={indvButton}>Add to Cart</button>
       </div>
+      <ShareSocial></ShareSocial>
     </div>
-
   )
 }
 
 export default AddCart
+
+const buttons = {
+  display: "flex",
+  textAlign: "left",
+  left: "18.5vw",
+  width: "60vw",
+  height: "75px",
+  flexDirection: "row",
+  marginLeft: "19vw",
+  marginTop: "10px",
+  marginBottom: "40px"
+}
+
+const indvButton = {
+  fontWeight: "bold",
+  maxWidth: "250px",
+  // margin: "10px",
+  maxHeight: "75px",
+  backgroundColor: "#F0EAD6",
+  //border: "1px solid black",
+  padding: "10px",
+  boxShadow: "1px 1px 5px gray"
+}
