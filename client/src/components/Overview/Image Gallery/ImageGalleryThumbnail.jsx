@@ -1,5 +1,5 @@
 import React from 'react';
-import { GalleryThumbnail, CurrentGalleryThumbnail  } from './DefaultView.style.js';
+import { GalleryThumbnail, CurrentGalleryThumbnail } from './DefaultView.style.js';
 
 import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";

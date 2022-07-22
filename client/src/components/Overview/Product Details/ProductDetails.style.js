@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import {FaFacebook, FaTwitterSquare, FaPinterest} from 'react-icons/fa';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 export const StyledPrice = styled.div`
   font-size: 15px;
 `
@@ -13,11 +18,17 @@ export const StyledGenre = styled.p`
 
 export const StyledDesc = styled.p`
   font-style: italic;
+  margin-top: 30px;
+  justify-content: flex-end;
+`
+
+export const StyledIcons = styled.div`
+  margin-top: 10px;
 `
 
 
 export const FacebookIcon = styled(FaFacebook)`
-  font-size: 1rem;
+  font-size: 20px;
   color: #4267B2;
   cursor: pointer;
   user-select: none;
@@ -26,7 +37,7 @@ export const FacebookIcon = styled(FaFacebook)`
 `
 
 export const TwitterIcon = styled(FaTwitterSquare)`
-  font-size: 1rem;
+  font-size: 20px;
   color: #1DA1F2;
   cursor: pointer;
   user-select: none;
@@ -35,7 +46,7 @@ export const TwitterIcon = styled(FaTwitterSquare)`
 `
 
 export const PinterestIcon = styled(FaPinterest)`
-  font-size: 1rem;
+  font-size: 20px;
   color: #E60023;
   cursor: pointer;
   user-select: none;

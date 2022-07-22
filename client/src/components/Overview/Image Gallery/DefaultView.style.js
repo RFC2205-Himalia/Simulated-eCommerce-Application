@@ -17,6 +17,7 @@ export const StyledImage = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
 `
 
 export const LeftSplit = styled.div`

@@ -3,7 +3,7 @@ import Price from './Price.jsx'
 import Details from './Details.jsx'
 import ShareSocial from './ShareSocial.jsx'
 
-import { StyledGenre } from './ProductDetails.style.js'
+import { StyledGenre, Container } from './ProductDetails.style.js'
 
 import { useSelector } from 'react-redux'
 
@@ -14,13 +14,12 @@ function ProductDetails () {
   const productCategory = useSelector((state) => state.addProduct.products.category)
 
   return (
-    <div>
+    <Container>
       <StyledGenre data-testid="productCategory">{productCategory}</StyledGenre>
       <h1 data-testid="productName">{productName}</h1>
       <Price />
       <Details />
-      <ShareSocial />
-    </div>
+    </Container>
   )
 }
 

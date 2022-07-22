@@ -64,8 +64,7 @@ function SizeSelector (props) {
           return <option key={"key" + index} value={size} name={currentSkus}>{size}</option>
         })}
       </select>
-    <QuantitySelector sizeState={{size: [size, setSize]}}/>
-    <button onClick={checker}>test Click</button>
+    <QuantitySelector sizeState={{size: [size, setSize]}} />
     </div>
     :
    <div></div>
@@ -73,3 +72,14 @@ function SizeSelector (props) {
 }
 
 export default SizeSelector;
+
+const indvButton = {
+  fontWeight: "bold",
+  maxWidth: "250px",
+  margin: "10px",
+  maxHeight: "75px",
+  backgroundColor: "white",
+  //border: "1px solid black",
+  padding: "10px",
+  boxShadow: "1px 1px 5px gray"
+}

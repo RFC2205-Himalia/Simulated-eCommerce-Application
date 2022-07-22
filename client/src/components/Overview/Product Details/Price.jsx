@@ -8,6 +8,7 @@ followed by the original price which is struckthrough.
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { StyledPrice } from './ProductDetails.style.js'
+import { ShareSocial } from './ShareSocial.jsx'
 
 
 function Price () {
