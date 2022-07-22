@@ -239,5 +239,6 @@ const button = {
   borderRadius: "8px",
   fontSize: "16px",
   cursor: "pointer",
-  boxShadow: "2px 2px 5px gray"
+  boxShadow: "2px 2px 5px gray",
+  padding: "5px"
 }
