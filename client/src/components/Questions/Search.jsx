@@ -99,7 +99,8 @@ const inputStyle = {
   alignItems: 'center',
   width: '62vw',
   alignSelf: "center",
-  height: "40px"
+  height: "40px",
+  backgroundColor: '#5a5a5a',
 };
 
 const icon = {
@@ -108,5 +109,5 @@ const icon = {
   cursor: 'pointer',
   top: "30%",
   textShadow: "2px 2px 5px gray",
-  background: "white"
+  color: '#F0EAD6'
 }

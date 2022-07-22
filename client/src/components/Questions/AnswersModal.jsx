@@ -173,7 +173,7 @@ export default AnswersModal;
 //CSS Stuff.... Probably change later to styled-components
 
 const error = {
-  "color": "red",
+  "color": "#8B0000",
   'fontSize': '12px'
 }
 
@@ -186,7 +186,7 @@ const modalBackground = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "rgba(159,159,159,0.5)",
+  backgroundColor: "rgba(42,42,42,0.9",
   overflow: "hidden",
 }
 
@@ -195,7 +195,7 @@ const modalContainer = {
   width: "auto",
   height: "auto",
   borderRadius: "12px",
-  backgroundColor: "white",
+  backgroundColor: "#7a7a7a",
   boxShadow: "grey",
   display: "flex",
   flexDirection: "column",
@@ -210,13 +210,15 @@ const headers = {
   right: "0",
   postition: "absolute",
   textAlign: "center",
+  color: '#F0EAD6'
 }
 
 const formDiv = {
   display: "inlineBlock",
   maxWidth: "500px",
   textAlign: "right",
-  marginRight: "100px"
+  marginRight: "100px",
+  color: '#F0EAD6'
 }
 
 const textBox = {
@@ -224,11 +226,11 @@ const textBox = {
   height: "25px",
   right: "0",
   postition: "absolute",
+
 }
 
 const userStyle = {
   fontSize: '12px',
-  color: '#5c5c5c',
   marginRight: "10px",
 };
 

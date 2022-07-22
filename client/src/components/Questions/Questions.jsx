@@ -105,7 +105,8 @@ const h2 = {
   fontWeight: "100",
   fontSize: "26px",
   overflowX: "hidden",
-  marginBottom: "10px"
+  marginBottom: "10px",
+  color: '#F0EAD6'
 };
 const numberAsked = {
   position: 'relative',
@@ -116,11 +117,11 @@ const numberAsked = {
   marginBottom: "10px",
   marginTop: "5px",
   fontSize: "14px",
+  color: '#F0EAD6'
 };
 
 const wrapper = {
   maxWidth: "100vw",
-  //backgroundColor: "#ecf2f9"
 }
 
 const titleContainer = {

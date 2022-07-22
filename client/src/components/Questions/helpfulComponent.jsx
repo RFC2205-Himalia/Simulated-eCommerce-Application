@@ -73,7 +73,7 @@ function Helpful(props) {
   }
 
   return (
-    <div style={helpfulContainer}>
+    <div >
       <span style={userStyle}>
         Helpful?
       </span>&nbsp;&nbsp;
@@ -130,17 +130,12 @@ export default Helpful;
 const underlineStyle = {
   //position: "relative",
   fontSize: '12px',
-  color: '#6966669b',
+  color: '#d1cec2c1',
   textDecoration: 'underline',
   cursor: 'pointer',
 };
 const userStyle = {
   //position: "relative",
   fontSize: '12px',
-  color: '#6966669b',
+  color: '#d1cec2c1',
 };
-
-const helpfulContainer = {
-  // position: "relative",
-  // top: "-2vh",
-}

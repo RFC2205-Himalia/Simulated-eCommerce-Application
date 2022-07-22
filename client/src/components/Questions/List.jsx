@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Helpful from './helpfulComponent.jsx';
 import Answers from './renderAnswers.jsx';
 import { useSelector } from 'react-redux';
@@ -16,8 +17,9 @@ function List() {
           <div  style={questionsStyle} key={`${question.question_id}`}>
             <br></br>
             <div
-              style={{ 'fontSize': '18px', maxWidth: "45vw"}}>
-              <b>Q: {question.question_body} <span style={userStyle}> ({keys.length}) {keys.length === 1 ? 'Answer' : 'Answers'}</span></b>
+              style={{ 'fontSize': '18px', maxWidth: "45vw", color: '#F0EAD6'}}>
+              <b>Q: {question.question_body}</b>
+              <span style={userStyle}> ({keys.length}) {keys.length === 1 ? 'Answer' : 'Answers'}</span>
 
             </div>
             <div style={questionHelp}>
@@ -73,5 +75,6 @@ const questionHelp = {
 const userStyle = {
   //position: "relative",
   fontSize: '12px',
-  color: '#6966669b',
+  color: '#d1cec2c1',
 };
+
