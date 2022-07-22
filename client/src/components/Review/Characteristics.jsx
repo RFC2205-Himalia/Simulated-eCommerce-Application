@@ -18,6 +18,7 @@ function Characteristics({ characteristics }) {
         let lowerEnd = 'low';
         let middle = 'middle'
         let highEnd = 'high';
+        // let marginLeft = characteristics[i].value * 100 || 1;
 
         // console.log(characteristic);
 
@@ -58,7 +59,7 @@ function Characteristics({ characteristics }) {
           <form style={{color:"#F0EAD6"}} key={characteristics[characteristic].id}>
             <CharacteristicsText>{characteristic}</CharacteristicsText>
             <Indicator>
-              <Arrow/>
+              <Arrow style={{marginLeft: 20}}/>
               <CharacteristicsScale/>
               <CharacteristicsScale/>
               <CharacteristicsScale/>
