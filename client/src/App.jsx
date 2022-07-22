@@ -77,7 +77,7 @@ function App () {
 
 
 const AppWrapper = styled.div`
-
+  background: #2a2a2a;
 `;
 
 export default App;

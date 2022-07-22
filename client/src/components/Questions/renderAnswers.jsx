@@ -111,7 +111,7 @@ export default Answers;
 //CSS styling
 const answerClickable = {
   fontSize: '12px',
-  color: '#5c5c5c',
+  color: '#7a7a7a',
   cursor: 'pointer',
   fontWeight: 'bold',
   paddingLeft: '22px'
@@ -119,7 +119,7 @@ const answerClickable = {
 
 const intitialStyle = {
   fontSize: '12px',
-  color: '#6966669b',
+  color: '#d1cec2c1',
   paddingLeft: '22px',
   display: "flex",
   flexDirection: "row",
@@ -153,6 +153,6 @@ const answerTitle = {
   alignItems: 'left',
   width: '45vw',
   margin: "1px",
-  //alignSelf: "center",
+  color: '#F0EAD6',
   textAlign: "left"
 }
