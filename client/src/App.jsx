@@ -19,7 +19,7 @@ import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js
 
 function App () {
   const dispatch = useDispatch();
-  var product = '66670'
+  var product = '66644'
 
   const requests = (productID) => {
     axios.get(`/products/${productID}`)
