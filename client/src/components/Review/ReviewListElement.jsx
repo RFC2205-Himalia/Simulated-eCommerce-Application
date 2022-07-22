@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Stars from '../Questions/Stars.jsx';
-
-
+import ReviewHelpful from "./ReviewsHelpful.js";
 
 
 function ReviewListElement ({review}) {
@@ -18,7 +17,7 @@ function ReviewListElement ({review}) {
             </StarsAndDate>
             <Title>{review.summary}</Title>
             <BodyText>{review.body}</BodyText>
-            <SecondaryText>Helpful | Report Here</SecondaryText>
+            <ReviewHelpful data={review}/>
         </IndividualReviewElement>
 
     )
