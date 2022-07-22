@@ -76,7 +76,7 @@ function Answers(props) {
             </span>
           </div>
         )
-      }) : "No answers to question"}
+      }) : <span style={{color:"#7a7a7a"}}>No answers to question</span>}
       <br></br>
       {totalLength > 2 && initialLength < totalLength ?
         <span
@@ -131,7 +131,7 @@ const photos = {
   marginTop: "15px",
   marginRight: "10px",
   border: "1px solid black",
-  boxShadow: "1px 1px 5px black"
+  boxShadow: "1px 1px 5px black",
 };
 
 const photosOuter = {

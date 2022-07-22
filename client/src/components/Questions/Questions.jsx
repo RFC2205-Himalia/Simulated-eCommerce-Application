@@ -12,7 +12,7 @@ import { questionList, sorted, addRender, answerRender, answersUnchange } from "
 import { useEffect } from "react";
 
 function Questions ({productID}) {
-
+  productID = 66670
   // Hardcoded value for now, replace later with dynamic from URL
   var productNumber = Number(productID);
   // Variables to pass on current product id
