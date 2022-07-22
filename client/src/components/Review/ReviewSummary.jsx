@@ -7,6 +7,7 @@ import styled from "styled-components";
 import AverageReviewScore from "./AverageReviewScore.jsx";
 import ReviewBreakdown from "./ReviewBreakdown.jsx";
 import Characteristics from "./Characteristics.jsx";
+import ReviewRecommendations from "./ReviewRecommendations.jsx"
 
 function ReviewSummary({reviews, filterReviews, reviewMeta}) {
     reviews = reviews || [];
@@ -89,6 +90,7 @@ function ReviewSummary({reviews, filterReviews, reviewMeta}) {
             <AverageReviewScore AverageScore={averageScore}/>
             <ReviewBreakdown filterReviews={filterReviews} ones={numOnes} twos={numTwos} threes={numThrees} fours={numFours} fives={numFives}/>
             <Characteristics characteristics={reviewMeta.characteristics}/>
+            <ReviewRecommendations data={reviewMeta.recommended}/>
         </SummaryWrapper>
     )
 }
