@@ -51,7 +51,7 @@ const ReviewDate = styled.p`
 
 const IndividualReviewElement = styled.div`
 //   border: 5px solid rgb(0,0,0);
-  width: 40vw;
+  width: 31vw;
   height: 10vh;
 
 `;
