@@ -15,8 +15,8 @@ function ProductDetails () {
 
   return (
     <Container>
-      <StyledGenre data-testid="productCategory">{productCategory}</StyledGenre>
-      <h1 data-testid="productName">{productName}</h1>
+      <StyledGenre data-testid="productCategory" style={{color: "#F0EAD6"}}>{productCategory}</StyledGenre>
+      <h1 data-testid="productName" style={{color: "#F0EAD6"}}>{productName}</h1>
       <Price />
       <Details />
     </Container>

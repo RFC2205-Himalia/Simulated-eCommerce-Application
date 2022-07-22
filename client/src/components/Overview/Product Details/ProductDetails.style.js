@@ -8,11 +8,12 @@ export const Container = styled.div`
 
 export const StyledPrice = styled.div`
   font-size: 15px;
+  color: #F0EAD6
 `
 
 export const StyledGenre = styled.p`
   font-size: 20px;
-  margin-bottom: -23px;
+  margin-bottom: -10px;
 
 `
 
@@ -20,6 +21,7 @@ export const StyledDesc = styled.p`
   font-style: italic;
   margin-top: 30px;
   justify-content: flex-end;
+  color: #F0EAD6
 `
 
 export const StyledIcons = styled.div`

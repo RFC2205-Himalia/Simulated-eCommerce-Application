@@ -28,7 +28,7 @@ function StyleSelector () {
 
   return (styleList ? (
     <div>
-      <CurrentStyleText><b>Selected Style {">"} </b> {styleList[currentStyle].name}</CurrentStyleText>
+      <CurrentStyleText style={{color: "#F0EAD6"}}><b>Selected Style {">"} </b> {styleList[currentStyle].name}</CurrentStyleText>
       <StyledStyleGrid>
         {styleList.map((style, index) => {
           return <StyleThumbnail key={'StyleThumbnail-' + index} style={style} styleNumber={index}/>
