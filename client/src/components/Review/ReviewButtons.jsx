@@ -72,7 +72,6 @@ const buttons = {
     height: "75px",
     flexDirection: "row",
     marginLeft: "19vw",
-    marginTop: "10px",
     marginBottom: "40px"
   }
   
@@ -81,10 +80,12 @@ const buttons = {
     maxWidth: "250px",
     margin: "10px",
     maxHeight: "75px",
-    backgroundColor: "white",
+    backgroundColor: "#F0EAD6",
     //border: "1px solid black",
     padding: "10px",
-    boxShadow: "1px 1px 5px gray"
+    boxShadow: "1px 1px 5px black",
+    marginTop: "25px",
+
   }
   
   export default connect(mapStateToProps)(ReviewButtons);

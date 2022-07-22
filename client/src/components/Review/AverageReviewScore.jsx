@@ -9,7 +9,7 @@ function AverageReviewScore ({AverageScore}) {
     
     return (
         <AvgReviewScore>
-            <div>{AverageScore} </div>
+            <Title>{AverageScore} </Title>
            <Stars numStars={AverageScore}/>
         </AvgReviewScore>
     )
@@ -17,7 +17,16 @@ function AverageReviewScore ({AverageScore}) {
 
 const AvgReviewScore = styled.div`
     display: flex;
-    justify-content: space-between;
+    alignt-self: left;
+    position: relative;
+`;
+
+const Title = styled.h2`
+  font-weight: 100;
+  font-size: 90px;
+  color: #F0EAD6;
+  margin-bottom: 10px;
+  margin-right: 15px;
 `;
 
 export default AverageReviewScore;

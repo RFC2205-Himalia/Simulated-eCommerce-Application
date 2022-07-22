@@ -48,7 +48,7 @@ function App () {
       console.log(err);
     })
 
-    axios.get(`/reviews/meta?product_id=${productID}`)
+    axios.get(`/reviews/meta?product_id=66670`)
     .then((success) => {
       dispatch(addReviewMeta(success.data));
     })

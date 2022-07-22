@@ -50,11 +50,15 @@ function Stars({numStars}) {
 export default Stars;
 
 const emptyStars = {
-  position: "fixed",
+  position: "relative",
   display: "inline-flex",
+  color: "#F0EAD6",
+  marginTop: "20px"
 }
 
 const filledStars = {
   position: "absolute",
   top: "0.1vh",
+  color: "#F0EAD6",
+
 }
