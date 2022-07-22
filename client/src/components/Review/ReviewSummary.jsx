@@ -7,7 +7,7 @@ import styled from "styled-components";
 import AverageReviewScore from "./AverageReviewScore.jsx";
 import ReviewBreakdown from "./ReviewBreakdown.jsx";
 import Characteristics from "./Characteristics.jsx";
-import ReviewRecommendations from "./ReviewRecommendations.js"
+import ReviewRecommendations from "./ReviewRecommendations.jsx"
 
 function ReviewSummary({reviews, filterReviews, reviewMeta}) {
     reviews = reviews || [];

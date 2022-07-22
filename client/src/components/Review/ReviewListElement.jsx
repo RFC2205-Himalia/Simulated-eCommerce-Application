@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Stars from '../Questions/Stars.jsx';
-import ReviewHelpful from "./ReviewsHelpful.js";
+import ReviewHelpful from "./ReviewsHelpful.jsx";
 
 
 function ReviewListElement ({review}) {
