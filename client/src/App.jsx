@@ -19,7 +19,7 @@ import { addReviews, addAvgScore, addReviewMeta } from "./Features/addReviews.js
 
 function App () {
   const dispatch = useDispatch();
-  var product = '66644'
+  var product = '66670'
 
   const requests = (productID) => {
     axios.get(`/products/${productID}`)
@@ -66,7 +66,7 @@ function App () {
         element: e.target.getAttribute('element'),
         widget: e.target.getAttribute('widget'),
         time: `${new Date}`
-      }))} >
+      }))}>
           <Overview/>
           <Questions productID={product}/>
           <Reviews/>
@@ -77,8 +77,7 @@ function App () {
 
 
 const AppWrapper = styled.div`
-display: flex;
-flex-direction: column;
+
 `;
 
 export default App;

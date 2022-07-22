@@ -1,5 +1,5 @@
 const path = require("path");
-const CompressionPlugin = require("compression-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -58,6 +58,9 @@ module.exports = {
     path: path.join(__dirname, './client/public'),
     filename: "bundle.js"
   },
+  plugins: [
+    // new CompressionPlugin()
+  ],
   module: {
     rules: [
       {
@@ -96,5 +99,4 @@ module.exports = {
     // [port] what port on our local machine to run the dev server
     port: 3000,
   },
-  plugins: [new CompressionPlugin()],
 };
