@@ -22,9 +22,8 @@ import { StyledStyleGrid, CurrentStyleText } from './StyleSelector.style.js'
 
 function StyleSelector () {
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  // console.log('Style\'s List', styleList)
+  console.log('Style List', styleList);
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  // console.log('Current Style', currentStyle)
 
   return (styleList ? (
     <div>

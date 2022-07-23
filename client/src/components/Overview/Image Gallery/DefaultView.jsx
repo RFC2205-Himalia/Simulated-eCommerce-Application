@@ -9,14 +9,11 @@ import { setCurrentPhoto } from '../../../Features/Styles.js';
 function DefaultView () {
   const dispatch = useDispatch();
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  console.log('Style\'s List', styleList)
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  console.log('Current Style', currentStyle)
   const currentPhoto = useSelector((state) => state.stylesList.currentPhoto)
 
   if (styleList) {
     var photos = styleList[currentStyle].photos
-    console.log('photos', photos);
     var length = photos.length;
 
     var nextSlide = () => {
@@ -28,7 +25,6 @@ function DefaultView () {
   }
 
   useEffect(() => {
-    console.log('photo Changed')
   }, [currentPhoto]);
 
 

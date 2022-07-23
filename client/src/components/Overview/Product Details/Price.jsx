@@ -13,9 +13,7 @@ import { ShareSocial } from './ShareSocial.jsx'
 
 function Price () {
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  // console.log('Style List', styleList);
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  // console.log('currentStyle', currentStyle)
   let originalPrice = 0;
   let salePrice = null;
 
@@ -24,12 +22,10 @@ function Price () {
       if(index === currentStyle) {
         originalPrice = style.original_price
         salePrice = style.sale_price
-        // console.log('got prices', originalPrice, salePrice)
       }
     })
   }
 
-//for refactoring consider using turnary (? :)
 if (!salePrice) {
   return (
   <StyledPrice>

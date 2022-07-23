@@ -16,13 +16,9 @@ function SizeSelector (props) {
   const [showText, setShowText] = useState(true);
   const [state, setState] = useState(0);
   const currentSkus = useSelector ((state) => state.stylesList.currentSkus);
-  var ready = false;
-  // console.log(currentSkus);
 
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  // console.log('Style\'s List', styleList)
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  // console.log('Current Style', currentStyle)
 
   const sizeListener = (event) => {
     var updatedSize = event.target.value
@@ -34,19 +30,6 @@ function SizeSelector (props) {
     })
   }
 
-  const onClickRequest = (event) => {
-    // console.log(availableSizes)
-    if (availableSizes.length > 0) {
-      ready = true
-    }
-    setState(1)
-    // console.log(ready)
-  }
-
-  const checker = (event) => {
-    console.log(size);
-    console.log(availableSizes);
-  }
 
   useEffect(() => {
     setAvailableSizes([])

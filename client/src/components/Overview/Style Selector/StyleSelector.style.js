@@ -17,18 +17,22 @@ export const StyledThumbnail = styled.img`
 height: 50px;
 width: 50px;
 border-radius: 50%;
+object-fit: cover;
 margin: 10px;
 
 &:hover {
-  border: 3px solid red;
+  border: 3px solid;
+  border-color: #F0EAD6;
 }
 `
 
 export const CurrentStyledThumbnail = styled.img`
 height: 50px;
 width: 50px;
+object-fit: cover;
 border-radius: 50%;
-border: 3px solid red;
+border: 3px solid;
+border-color: #F0EAD6;
 margin: 10px;
 `
 

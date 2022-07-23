@@ -9,3 +9,46 @@ The total number of reviews should be inserted in place of [#].
 Clicking this link should scroll the page to the Ratings & Reviews module described in section 1.2.
 If there are no reviews, this entire section should be hidden.
 */
+import React from 'react';
+import Stars from '../../Questions/Stars.jsx';
+
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+
+function ProductStars () {
+  const reviewsFromStore = useSelector((state) => state.addReviews.reviews);
+  const [AverageScore, setReviews] = useState(0);
+
+  useEffect(() => {
+
+  if (reviewsFromStore) {
+    console.log('rating finder', reviewsFromStore[0]);
+    var iterableList = [];
+    var sum = 0;
+    var count = 0;
+    reviewsFromStore.forEach((element) => {
+      console.log('element rating2 ', element.rating);
+      iterableList.push(element.rating);
+    })
+    iterableList.forEach((element) => {
+      sum += element;
+      count += 1;
+    })
+    setReviews((sum/count));
+  }
+  },[reviewsFromStore])
+
+
+
+
+  return ( AverageScore ?
+       <Stars numStars={AverageScore}/>
+    : <div>Placeholder no reviews</div>
+    )
+
+}
+
+
+
+export default ProductStars;

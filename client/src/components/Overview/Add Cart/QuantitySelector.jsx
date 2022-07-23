@@ -23,8 +23,6 @@ useEffect(() => {
   }
 }, [size]);
 
-console.log('IS THIS HERE', size.quantity, stockQuantity)
-
 
 
 return ( size.quantity ?
