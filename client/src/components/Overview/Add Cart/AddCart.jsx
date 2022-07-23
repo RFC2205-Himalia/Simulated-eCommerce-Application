@@ -10,15 +10,11 @@ import ShareSocial from '../Product Details/ShareSocial.jsx';
 function AddCart () {
   const dispatch = useDispatch();
   const styleList = useSelector((state) => state.stylesList.styles.results)
-  // console.log('Style\'s List', styleList)
   const currentStyle = useSelector((state) => state.stylesList.currentStyle)
-  // console.log('Current Style', currentStyle)
   const currentSkus = useSelector((state) => state.stylesList.currentSkus)
   const [size, setSize] = useState({size: undefined, quantity: undefined});
   const [availableSizes, setAvailableSizes] = useState([])
 
-  console.log('test for Sizes', size)
-  console.log('test for Available Sizes', availableSizes)
 
   useEffect(() => {
     if (styleList) {

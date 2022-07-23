@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 function ImageGalleryThumbnail (props) {
   const dispatch = useDispatch();
-  const currentPhoto = useSelector((state) => state.stylesList.currentStyle)
+  var currentPhoto = useSelector((state) => state.stylesList.currentPhoto)
 
   const changePhoto = () => {
     var newPhoto = props.photoNumber
@@ -21,7 +21,7 @@ function ImageGalleryThumbnail (props) {
 
   return (
     currentPhoto === props.photoNumber ?
-   <GalleryThumbnail src={props.photo[props.photoNumber].url ? props.photo[props.photoNumber].url : props.photo[props.photoNumber].thumbnail_url} onClick={changePhoto}></GalleryThumbnail>
+   <CurrentGalleryThumbnail src={props.photo[props.photoNumber].url ? props.photo[props.photoNumber].url : props.photo[props.photoNumber].thumbnail_url} onClick={changePhoto}></CurrentGalleryThumbnail>
    : <GalleryThumbnail src= {props.photo[props.photoNumber].url ? props.photo[props.photoNumber].url : props.photo[props.photoNumber].thumbnail_url} onClick={changePhoto} ></GalleryThumbnail>
    )
 }

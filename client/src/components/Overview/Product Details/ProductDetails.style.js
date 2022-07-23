@@ -21,7 +21,7 @@ export const StyledDesc = styled.p`
   font-style: italic;
   margin-top: 30px;
   justify-content: flex-end;
-  color: #F0EAD6
+  color: #F0EAD6;
 `
 
 export const StyledIcons = styled.div`
