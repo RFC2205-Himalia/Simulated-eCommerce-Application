@@ -11,7 +11,23 @@ RFC2205 Front End Capstone Project team Himalia
 
 ## Usage
 
-> usage instructions
+1. Navigate to your projects folder
+2. Clone repo from Github
+3. Create a file named .env inside the repo directory that conaints the fields
+```sh
+AUTH_TOKEN = 'a github auth token with the properties read:org, read:user'
+PORT = 'a local port you want to use for development, defaults to 3000'
+  ```
+4. If you do not have yarn installed on your machine, download it with your package manager of choice
+5. Inside the repo's directory run
+```sh
+yarn install
+```
+6. to start development or preview the project run the following commands in two seperate terminal instances
+```sh
+yarn build | yarn dev
+```
+7. open up your browser and go to localhost:3000
 
 ## Requirements
 
